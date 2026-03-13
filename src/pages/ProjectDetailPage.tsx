@@ -15,6 +15,12 @@ import project6 from "@/assets/project-6.jpg";
 import aptBefore from "@/assets/apt-before.png";
 import aptAfter from "@/assets/apt-after.png";
 
+import acBefore from "@/assets/ac_before.png";
+import acAfter from "@/assets/ac_after.png";
+
+import officeBefore from "@/assets/office_before.png";
+import officeAfter from "@/assets/office_after.png";
+
 import mascot from "@/assets/mascot.png";
 
 import diary1 from "@/assets/work-diary-1.png";
@@ -53,10 +59,14 @@ const ProjectDetailPage = ({ lang, setLang }: ProjectDetailPageProps) => {
 
   const beforeImages: Record<string, string> = {
     "apartment-junk": aptBefore,
+    "ac-installation": acBefore,
+    "office-cleanup": officeBefore,
   };
 
   const afterImages: Record<string, string> = {
     "apartment-junk": aptAfter,
+    "ac-installation": acAfter,
+    "office-cleanup": officeAfter,
   };
 
   const currentBeforeImage = beforeImages[project.id];

@@ -25,7 +25,6 @@ const Index = ({ lang, setLang }: IndexProps) => {
       <Projects lang={lang} />
       <WhyUs lang={lang} />
       <Process lang={lang} />
-      <CompanyInfo lang={lang} />
       <ContactForm lang={lang} />
       <Footer />
     </div>
