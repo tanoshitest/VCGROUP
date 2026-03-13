@@ -32,7 +32,7 @@ const BlogDetailPage = ({ lang, setLang }: BlogDetailPageProps) => {
       <PageBanner />
       
       <main className="section-padding">
-        <div className="container mx-auto px-4 max-w-4xl">
+        <div className="container mx-auto px-4 max-w-6xl">
           <motion.button
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
