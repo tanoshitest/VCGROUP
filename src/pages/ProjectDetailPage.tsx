@@ -23,6 +23,11 @@ import diary3 from "@/assets/work-diary-3.png";
 import diary4 from "@/assets/work-diary-4.png";
 import diary5 from "@/assets/work-diary-5.png";
 
+import trustStaff from "@/assets/trust_staff.jpg";
+import trustTruck from "@/assets/trust_truck.jpg";
+import trustTime from "@/assets/trust_time.jpg";
+import trustEco from "@/assets/trust_eco.jpg";
+
 const images = [project1, project2, project3, project4, project5, project6];
 const diaryImages = [
   { src: diary1, className: "w-64 aspect-[4/3] rounded-2xl" },
@@ -57,13 +62,15 @@ const ProjectDetailPage = ({ lang, setLang }: ProjectDetailPageProps) => {
   const currentBeforeImage = beforeImages[project.id];
   const currentAfterImage = afterImages[project.id] || images[projectIndex];
 
-  const renderTrustBadge = (icon: any, title: string, desc: string) => (
-    <div className="flex flex-col items-center p-6 bg-background rounded-xl shadow-sm border border-border">
-      <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary mb-4">
-        {icon}
+  const renderTrustBadge = (imageSrc: string, title: string, desc: string) => (
+    <div className="flex flex-col bg-background rounded-2xl shadow-sm border border-border overflow-hidden col-span-1 group hover:shadow-md transition-shadow">
+      <div className="w-full h-48 sm:h-56 overflow-hidden">
+         <img src={imageSrc} alt={title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
       </div>
-      <h4 className="font-heading font-bold text-foreground mb-1">{title}</h4>
-      <p className="text-xs text-muted-foreground text-center">{desc}</p>
+      <div className="p-6">
+        <h4 className="font-heading font-bold text-lg text-primary mb-2">{title}</h4>
+        <p className="text-sm text-muted-foreground">{desc}</p>
+      </div>
     </div>
   );
 
@@ -212,11 +219,11 @@ const ProjectDetailPage = ({ lang, setLang }: ProjectDetailPageProps) => {
               {lang === "vi" ? "Niềm tin của khách hàng là ưu tiên hàng đầu của chúng tôi." : "Building trust through professional service."}
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {renderTrustBadge(<Users />, lang === "vi" ? "Đội ngũ chuyên nghiệp" : "Professional Staff", "Thân thiện, nhiệt tình, có trách nhiệm cao")}
-            {renderTrustBadge(<Truck />, lang === "vi" ? "Xe tải hiện đại" : "Modern Fleet", "Vận hành êm ái, đảm bảo an toàn hàng hóa")}
-            {renderTrustBadge(<CheckCircle2 />, lang === "vi" ? "Đúng tiến độ" : "On Time", "Luôn hoàn thành công việc theo lịch hẹn")}
-            {renderTrustBadge(<Recycle />, lang === "vi" ? "Thân thiện môi trường" : "Eco Friendly", "Tối đa hóa tái sử dụng, giảm thiểu rác thải")}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {renderTrustBadge(trustStaff, lang === "vi" ? "Đội ngũ chuyên nghiệp" : "Professional Staff", "Thân thiện, nhiệt tình, có trách nhiệm cao. Đội ngũ nhân viên giàu kinh nghiệm luôn đặt sự hài lòng của khách hàng lên hàng đầu.")}
+            {renderTrustBadge(trustTruck, lang === "vi" ? "Xe tải hiện đại" : "Modern Fleet", "Vận hành êm ái, đảm bảo an toàn hàng hóa. Đội xe đa dạng kích cỡ phù hợp cho mọi nhu cầu vận chuyển lớn nhỏ.")}
+            {renderTrustBadge(trustTime, lang === "vi" ? "Đúng tiến độ" : "On Time", "Luôn hoàn thành công việc theo lịch hẹn. Chúng tôi tuân thủ nghiêm ngặt thời gian và tối ưu hóa quy trình để xử lý nhanh chóng.")}
+            {renderTrustBadge(trustEco, lang === "vi" ? "Thân thiện môi trường" : "Eco Friendly", "Tối đa hóa tái sử dụng, giảm thiểu rác thải. Chúng tôi phân loại nghiêm ngặt và hợp tác các trạm tái chế đúng quy định pháp luật.")}
           </div>
         </div>
       </section>
