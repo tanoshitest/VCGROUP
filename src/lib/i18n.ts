@@ -65,12 +65,48 @@ export const translations = {
     title: { jp: "施工事例", vi: "Dự Án của chúng tôi", en: "Our Projects" },
     viewMore: { jp: "もっと見る", vi: "Xem thêm", en: "View More" },
     items: [
-      { jp: "マンション不用品回収", vi: "Thu gom đồ chung cư", en: "Apartment Junk Removal" },
-      { jp: "エアコン取付工事", vi: "Lắp đặt điều hòa", en: "AC Installation" },
-      { jp: "中古家具リユース", vi: "Tái sử dụng nội thất cũ", en: "Furniture Reuse" },
-      { jp: "産業廃棄物運搬", vi: "Vận chuyển rác thải", en: "Waste Transport" },
-      { jp: "オフィス片付け", vi: "Dọn dẹp văn phòng", en: "Office Cleanup" },
-      { jp: "引越し不用品処分", vi: "Xử lý đồ khi chuyển nhà", en: "Moving Disposal" },
+      {
+        id: "apartment-junk",
+        title: { jp: "マンション不用品回収", vi: "Thu gom đồ chung cư", en: "Apartment Junk Removal" },
+        before: { vi: "Đồ đạc cũ ngổn ngang tại căn hộ chung cư cao tầng.", jp: "高層マンションの不用品が散乱している状態。", en: "Cluttered furniture in a high-rise apartment." },
+        after: { vi: "Không gian sạch sẽ, toàn bộ đồ đạc được vận chuyển an toàn qua thang máy.", jp: "エレベーターを利用して全ての不用品を安全に排出し、清掃が完了した状態。", en: "Clean space after safe removal via elevator." },
+        reuseStory: { vi: "Các đồ nội thất gỗ còn tốt được chuyển đến xưởng tân trang để tái sử dụng.", jp: "状態の良い木製家具は工房でリペアされ、再利用されました。", en: "Quality wooden furniture was sent to a workshop for refurbishment and reuse." }
+      },
+      {
+        id: "ac-installation",
+        title: { jp: "エアコン取付工事", vi: "Lắp đặt điều hòa", en: "AC Installation" },
+        before: { vi: "Khu vực tường trống chưa có hệ thống làm mát.", jp: "冷房設備がない空の状態の壁面。", en: "Empty wall without any cooling system." },
+        after: { vi: "Hệ thống điều hòa công nghiệp vận hành ổn định, thẩm mỹ cao.", jp: "業務用エアコンが美しく設置され、安定稼働している状態。", en: "Industrial AC system installed professionally and running smoothly." },
+        reuseStory: { vi: "Các linh kiện máy cũ được phân loại để tái chế linh kiện điện tử.", jp: "古い機材は電子部品のリサイクルとして再資源化されました。", en: "Old unit parts were sorted for electronic component recycling." }
+      },
+      {
+        id: "furniture-reuse",
+        title: { jp: "中古家具リユース", vi: "Tái sử dụng nội thất cũ", en: "Furniture Reuse" },
+        before: { vi: "Sofa và bàn cũ bị bám bụi, chuẩn bị bỏ đi.", jp: "埃を被り、廃棄される予定だった古い家具。", en: "Dusty old sofa and table marked for disposal." },
+        after: { vi: "Sản phẩm như mới sau khi được vệ sinh công nghiệp và bọc lại.", jp: "クリーニングと張り替えを経て、新品同様に蘇った家具。", en: "Furniture restored to like-new condition after professional cleaning." },
+        reuseStory: { vi: "Tiết kiệm 80% chi phí cho khách hàng mới so với việc mua đồ mới.", jp: "新品購入と比較して、新しい持ち主のコストを80%削減しました。", en: "Saved 80% of costs for new owners compared to buying new." }
+      },
+      {
+        id: "waste-transport",
+        title: { jp: "産業廃棄物運搬", vi: "Vận chuyển rác thải", en: "Waste Transport" },
+        before: { vi: "Rác thải công nghiệp tích tụ gây cản trở sản xuất tại nhà máy.", jp: "工場の生産ラインを妨げていた産業廃棄物の山。", en: "Industrial waste pile obstructing factory production." },
+        after: { vi: "Mặt bằng thông thoáng, đạt tiêu chuẩn an toàn vệ sinh môi trường.", jp: "環境衛生基準をクリアし、生産スペースが確保された状態。", en: "Clear floor meeting environmental safety standards." },
+        reuseStory: { vi: "Kim loại phế liệu được tách lọc hoàn toàn để đưa vào nhà máy luyện kim.", jp: "金属スクラップは全て分離され、製鉄所へと運ばれました。", en: "Scrap metals were fully separated and sent to smelting plants." }
+      },
+      {
+        id: "office-cleanup",
+        title: { jp: "Dọn dẹp văn phòng", vi: "Dọn dẹp văn phòng", en: "Office Cleanup" },
+        before: { vi: "Văn phòng cũ nhiều giấy tờ và thiết bị điện tử hỏng.", jp: "古い書類や故障した電子機器が混在するオフィス。", en: "Office cluttered with old documents and broken electronics." },
+        after: { vi: "Văn phòng trống sẵn sàng bàn giao cho chủ mới.", jp: "明け渡し準備が整った、何もない清らかな状態のオフィス。", en: "Empty office ready for handover to new tenants." },
+        reuseStory: { vi: "Máy tính cũ được kiểm tra và tặng cho các trung tâm đào tạo từ thiện.", jp: "古いPCは検査を経て、教育支援団体へ寄付されました。", en: "Discarded PCs were tested and donated to educational charities." }
+      },
+      {
+        id: "moving-disposal",
+        title: { jp: "引越し不用品処分", vi: "Xử lý đồ khi chuyển nhà", en: "Moving Disposal" },
+        before: { vi: "Giai đoạn hỗn loạn khi chuyển nhà với nhiều đồ bỏ lại.", jp: "引越し作業中の、不用品が混在する混乱した様子。", en: "Chaotic move-out scene with many items left behind." },
+        after: { vi: "Toàn bộ rác thải được xử lý gọn gàng trong ngày.", jp: "全ての不用品が即日で片付けられ、スッキリした状態。", en: "All unwanted items cleared neatly within the same day." },
+        reuseStory: { vi: "Giảm thiểu lượng rác thải ra môi trường qua việc phân loại kỹ.", jp: "徹底した分別により、最終的な埋め立てゴミを大幅に削減しました。", en: "Significantly reduced landfill waste through meticulous sorting." }
+      },
     ],
   },
   whyUs: {

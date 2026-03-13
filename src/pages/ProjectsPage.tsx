@@ -84,6 +84,9 @@ const ProjectsPage = ({ lang, setLang }: ProjectsPageProps) => {
       <section className="section-padding">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+import { useNavigate, Link } from "react-router-dom";
+
+// ... inside the component ...
             {items.map((item, i) => (
               <motion.div
                 key={i}
@@ -91,25 +94,31 @@ const ProjectsPage = ({ lang, setLang }: ProjectsPageProps) => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="card-3d bg-card rounded-xl overflow-hidden"
+                className="card-3d bg-card rounded-xl overflow-hidden cursor-pointer"
               >
-                <div className="relative overflow-hidden group">
-                  <img
-                    src={images[i]}
-                    alt={t(item, lang)}
-                    className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-vc-black/0 group-hover:bg-vc-black/20 transition-colors duration-300" />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-lg font-heading font-bold text-foreground mb-2">
-                    {t(item, lang)}
-                  </h3>
-                  <p className="text-sm font-body text-muted-foreground leading-relaxed">
-                    {t(projectDescriptions[i], lang)}
-                  </p>
-                </div>
+                <Link to={`/projects/${item.id}`}>
+                  <div className="relative overflow-hidden group">
+                    <img
+                      src={images[i]}
+                      alt={t(item.title, lang)}
+                      className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-vc-black/0 group-hover:bg-vc-black/20 transition-colors duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                       <span className="bg-white text-foreground px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
+                          {lang === "vi" ? "Xem chi tiết" : lang === "jp" ? "詳細を見る" : "View Details"}
+                       </span>
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-lg font-heading font-bold text-foreground mb-2">
+                      {t(item.title, lang)}
+                    </h3>
+                    <p className="text-sm font-body text-muted-foreground leading-relaxed">
+                      {t(projectDescriptions[i], lang)}
+                    </p>
+                  </div>
+                </Link>
               </motion.div>
             ))}
           </div>
