@@ -62,7 +62,7 @@ export const translations = {
     },
   },
   projects: {
-    title: { jp: "施工事例・実績", vi: "Dự án & Thành tựu", en: "Projects & Results" },
+    title: { jp: "施工事例", vi: "Dự Án của chúng tôi", en: "Our Projects" },
     viewMore: { jp: "もっと見る", vi: "Xem thêm", en: "View More" },
     items: [
       { jp: "マンション不用品回収", vi: "Thu gom đồ chung cư", en: "Apartment Junk Removal" },

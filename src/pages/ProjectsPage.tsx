@@ -73,10 +73,10 @@ const ProjectsPage = ({ lang, setLang }: ProjectsPageProps) => {
             className="text-muted-foreground font-body max-w-2xl mx-auto"
           >
             {lang === "jp"
-              ? "これまでの施工事例・実績をご紹介します。"
+              ? "これまでの施工事例をご紹介します。"
               : lang === "vi"
-              ? "Giới thiệu các dự án và thành tựu của chúng tôi."
-              : "Browse our past projects and achievements."}
+              ? "Giới thiệu các dự án của chúng tôi."
+              : "Browse our past projects."}
           </motion.p>
         </div>
       </section>
