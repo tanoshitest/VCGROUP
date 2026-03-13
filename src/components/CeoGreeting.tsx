@@ -12,14 +12,6 @@ const CeoGreeting = ({ lang }: CeoGreetingProps) => {
   return (
     <section className="section-padding">
       <div className="container mx-auto">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-3xl md:text-4xl font-heading font-bold text-center mb-12 text-foreground"
-        >
-          {t(title, lang)}
-        </motion.h2>
         <div className="flex flex-col md:flex-row items-center gap-10 max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
