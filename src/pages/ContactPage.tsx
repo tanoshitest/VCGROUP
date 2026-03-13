@@ -99,22 +99,20 @@ const ContactPage = ({ lang, setLang }: ContactPageProps) => {
             })}
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-            <div>
-              <ContactForm lang={lang} />
-            </div>
+          <div className="max-w-6xl mx-auto space-y-12">
+            <ContactForm lang={lang} />
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="rounded-xl overflow-hidden shadow-lg min-h-[400px]"
+              className="rounded-xl overflow-hidden shadow-lg w-full h-[450px]"
             >
               <iframe
                 title="VC GROUP Location"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3228.0!2d139.79!3d35.87!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z5Z-8546Jt6OKY-mcrOW4guiSsueUn-acrOeUujMtMzA!5e0!3m2!1sja!2sjp!4v1600000000000!5m2!1sja!2sjp"
                 width="100%"
                 height="100%"
-                style={{ border: 0, minHeight: 400 }}
+                style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
