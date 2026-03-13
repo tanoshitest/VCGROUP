@@ -54,9 +54,7 @@ const Projects = ({ lang }: ProjectsProps) => {
           ))}
         </div>
 
-        <div className="text-center mt-8">
-          <button className="btn-primary">{t(viewMore, lang)}</button>
-        </div>
+
       </div>
     </section>
   );
