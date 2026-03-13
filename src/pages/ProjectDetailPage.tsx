@@ -15,6 +15,8 @@ import project6 from "@/assets/project-6.jpg";
 import aptBefore from "@/assets/apt-before.png";
 import aptAfter from "@/assets/apt-after.png";
 
+import mascot from "@/assets/mascot.png";
+
 import diary1 from "@/assets/work-diary-1.png";
 import diary2 from "@/assets/work-diary-2.png";
 import diary3 from "@/assets/work-diary-3.png";
@@ -152,19 +154,20 @@ const ProjectDetailPage = ({ lang, setLang }: ProjectDetailPageProps) => {
       </section>
 
       {/* Sustainability Story */}
-      <section className="section-padding bg-eco-green/5">
-        <div className="container mx-auto max-w-4xl">
-           <div className="bg-white p-8 md:p-12 rounded-3xl shadow-xl flex flex-col md:flex-row items-center gap-8">
-              <div className="w-20 h-20 bg-eco-green/10 rounded-2xl flex items-center justify-center text-eco-green shrink-0">
-                <Recycle size={48} />
-              </div>
-              <div>
-                <h3 className="text-2xl font-heading font-bold text-eco-green mb-4">
-                  {lang === "vi" ? "Câu chuyện tái sử dụng" : lang === "jp" ? "リユース・環境への取り組み" : "Sustainability Spotlight"}
+      <section className="section-padding bg-background relative overflow-hidden">
+        <div className="container mx-auto max-w-5xl">
+           <div className="bg-primary/5 p-8 md:p-14 lg:pr-64 rounded-[32px] md:rounded-[48px] relative border border-primary/10">
+              <div className="relative z-10">
+                <h3 className="text-2xl md:text-3xl font-heading font-bold text-primary mb-6">
+                  {lang === "vi" ? "Câu chuyện đằng sau dự án" : lang === "jp" ? "プロジェクトの裏話" : "Project Story"}
                 </h3>
-                <p className="text-lg font-body text-foreground leading-relaxed">
+                <p className="text-lg font-body text-foreground/80 leading-relaxed">
                   {t(project.reuseStory, lang)}
                 </p>
+              </div>
+              
+              <div className="hidden lg:block absolute bottom-0 right-8 z-20">
+                 <img src={mascot} alt="VC Group Mascot" className="w-64 h-auto drop-shadow-xl" />
               </div>
            </div>
         </div>
