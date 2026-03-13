@@ -93,6 +93,10 @@ const ProductCatalogPage = ({ lang, setLang }: ProductCatalogPageProps) => {
                       src={product.image}
                       alt={t(product.title, lang)}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src = "https://images.unsplash.com/photo-1584622781564-1d9876a13d00?q=80&w=400&fit=crop";
+                      }}
                     />
                     <div className="absolute top-4 right-4 bg-vc-black text-white px-3 py-1 rounded-lg text-sm font-bold shadow-lg">
                       {product.price}
