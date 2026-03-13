@@ -70,7 +70,8 @@ const ContactPage = ({ lang, setLang }: ContactPageProps) => {
 
       <section className="section-padding">
         <div className="container mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          <div className="max-w-6xl mx-auto mb-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {contactCards.map((card, i) => {
               const Icon = card.icon;
               const Wrapper = card.href ? "a" : "div";
@@ -97,6 +98,7 @@ const ContactPage = ({ lang, setLang }: ContactPageProps) => {
                 </motion.div>
               );
             })}
+          </div>
           </div>
 
           <div className="max-w-6xl mx-auto space-y-12">
