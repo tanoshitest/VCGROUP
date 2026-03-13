@@ -13,6 +13,8 @@ import ContactPage from "./pages/ContactPage.tsx";
 import ProjectDetailPage from "./pages/ProjectDetailPage.tsx";
 import BlogPage from "./pages/BlogPage.tsx";
 import BlogDetailPage from "./pages/BlogDetailPage.tsx";
+import ServiceDetailPage from "./pages/ServiceDetailPage.tsx";
+import ProductCatalogPage from "./pages/ProductCatalogPage.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -34,6 +36,8 @@ const App = () => {
             <Route path="/projects/:id" element={<ProjectDetailPage lang={lang} setLang={setLang} />} />
             <Route path="/blog" element={<BlogPage lang={lang} setLang={setLang} />} />
             <Route path="/blog/:id" element={<BlogDetailPage lang={lang} setLang={setLang} />} />
+            <Route path="/services/:id" element={<ServiceDetailPage lang={lang} setLang={setLang} />} />
+            <Route path="/reuse-catalog" element={<ProductCatalogPage lang={lang} setLang={setLang} />} />
             <Route path="/contact" element={<ContactPage lang={lang} setLang={setLang} />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

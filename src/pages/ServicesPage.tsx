@@ -110,6 +110,21 @@ const ServicesPage = ({ lang, setLang }: ServicesPageProps) => {
                       </li>
                     ))}
                   </ul>
+
+                  <motion.div 
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    className="mt-8"
+                  >
+                    <a 
+                      href={item.id === "reuse-sales" ? "/reuse-catalog" : `/services/${item.id}`} 
+                      className="btn-outline inline-flex items-center gap-2 group"
+                    >
+                      {lang === "vi" ? "Xem thêm" : lang === "jp" ? "もっと見る" : "See more"}
+                      <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                    </a>
+                  </motion.div>
                 </div>
               </motion.div>
             );
@@ -138,7 +153,7 @@ const ServicesPage = ({ lang, setLang }: ServicesPageProps) => {
         </div>
       </section>
 
-      <Footer />
+      <Footer lang={lang} />
     </div>
   );
 };
