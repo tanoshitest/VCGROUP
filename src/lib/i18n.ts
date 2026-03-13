@@ -182,14 +182,31 @@ export const translations = {
   company: {
     title: { jp: "会社情報", vi: "Thông tin công ty", en: "Company Information" },
     name: "VC GROUP 株式会社",
+    representative: { label: { jp: "代表取締役社長", vi: "Giám đốc đại diện", en: "Representative Director" }, value: "PHAN DUY PHUONG （ファン ズイ フォン）" },
     established: { label: { jp: "設立", vi: "Thành lập", en: "Established" }, value: "2020年12月28日" },
     capital: { label: { jp: "資本金", vi: "Vốn", en: "Capital" }, value: "２０００万円" },
     address: {
       label: { jp: "所在地", vi: "Địa chỉ", en: "Address" },
       value: "〒343-0837 埼玉県越谷市蒲生本町3-30",
     },
+    warehouse: {
+      label: { jp: "倉庫所在地", vi: "Địa chỉ kho", en: "Warehouse Address" },
+      value: "〒270-0229 千葉県野田市なみき 4-31-11",
+    },
     phone: { label: { jp: "電話番号", vi: "Điện thoại", en: "Phone" }, value: "048-919-2962" },
     email: { label: { jp: "メール", vi: "Email", en: "Email" }, value: "info@vcgroup.jp" },
+    business: {
+      label: { jp: "事業内容", vi: "Lĩnh vực kinh doanh", en: "Business Activities" },
+      value: { 
+        jp: "不用品回収・産業廃棄物運搬収集・エアコン取り付け",
+        vi: "Thu gom phế liệu・Vận chuyển rác thải công nghiệp・Lắp đặt điều hòa",
+        en: "Junk removal・Industrial waste transport・AC installation"
+      }
+    },
+    licenses: {
+      label: { jp: "許可", vi: "Giấy phép", en: "Licenses" },
+      value: "古物商許可 第 431270053223 号\n自家用自動車有償貸渡業の許可 交付番号第 1007 号"
+    }
   },
   contact: {
     title: { jp: "お問い合わせ", vi: "Liên hệ", en: "Contact Us" },

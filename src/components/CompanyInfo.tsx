@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { MapPin, Phone, Mail, Building2, Calendar, Banknote } from "lucide-react";
+import { MapPin, Phone, Mail, Building2, Banknote, User, Package, Briefcase, FileBadge } from "lucide-react";
 import { Language, translations, t } from "@/lib/i18n";
 
 interface CompanyInfoProps {
@@ -10,11 +10,15 @@ const CompanyInfo = ({ lang }: CompanyInfoProps) => {
   const c = translations.company;
 
   const details = [
+    { icon: User, label: t(c.representative.label, lang), value: c.representative.value },
     { icon: Building2, label: t(c.established.label, lang), value: c.established.value },
     { icon: Banknote, label: t(c.capital.label, lang), value: c.capital.value },
     { icon: MapPin, label: t(c.address.label, lang), value: c.address.value },
+    { icon: Package, label: t(c.warehouse.label, lang), value: c.warehouse.value },
     { icon: Phone, label: t(c.phone.label, lang), value: c.phone.value },
     { icon: Mail, label: t(c.email.label, lang), value: c.email.value },
+    { icon: Briefcase, label: t(c.business.label, lang), value: t(c.business.value, lang) },
+    { icon: FileBadge, label: t(c.licenses.label, lang), value: c.licenses.value },
   ];
 
   return (
@@ -44,7 +48,9 @@ const CompanyInfo = ({ lang }: CompanyInfoProps) => {
                     <span className="text-xs font-body font-semibold text-muted-foreground uppercase tracking-wide">
                       {d.label}
                     </span>
-                    <p className="font-body text-foreground">{d.value}</p>
+                    <p className="font-body text-foreground whitespace-pre-line">
+                      {d.value}
+                    </p>
                   </div>
                 </div>
               ))}
