@@ -167,7 +167,7 @@ const ProjectDetailPage = ({ lang, setLang }: ProjectDetailPageProps) => {
               </div>
               
               <div className="hidden lg:block absolute bottom-0 right-8 z-20">
-                 <img src={mascot} alt="VC Group Mascot" className="w-64 h-auto mix-blend-multiply" />
+                 <img src={mascot} alt="VC Group Mascot" className="w-64 h-auto mix-blend-darken opacity-90" />
               </div>
            </div>
         </div>
