@@ -157,7 +157,7 @@ const ProjectDetailPage = ({ lang, setLang }: ProjectDetailPageProps) => {
       <section className="section-padding bg-background relative overflow-hidden">
         <div className="container mx-auto max-w-5xl">
            <div className="bg-primary/5 p-8 md:p-14 lg:pr-80 rounded-[32px] md:rounded-[48px] relative border border-primary/10">
-              <div className="relative z-10 lg:max-w-2xl">
+              <div className="relative z-10 lg:max-w-3xl">
                 <h3 className="text-2xl md:text-3xl font-heading font-bold text-primary mb-6">
                   {lang === "vi" ? "Câu chuyện đằng sau dự án" : lang === "jp" ? "プロジェクトの裏話" : "Project Story"}
                 </h3>
@@ -166,8 +166,8 @@ const ProjectDetailPage = ({ lang, setLang }: ProjectDetailPageProps) => {
                 </p>
               </div>
               
-              <div className="hidden lg:block absolute bottom-0 right-8 lg:right-16 z-20 mix-blend-multiply pointer-events-none">
-                 <img src={mascot} alt="VC Group Mascot" className="w-80 lg:w-[380px] h-auto object-contain object-bottom" />
+              <div className="hidden lg:block absolute top-1/2 -translate-y-1/2 right-0 lg:-right-4 z-20 mix-blend-multiply pointer-events-none">
+                 <img src={mascot} alt="VC Group Mascot" className="w-80 lg:w-[380px] h-auto object-contain" />
               </div>
            </div>
         </div>
