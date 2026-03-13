@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 220 26% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 26% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 26% 10%;
+
+    --primary: 48 100% 50%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 210 20% 98%;
+    --secondary-foreground: 220 26% 10%;
+
+    --muted: 210 20% 97%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 130 50% 33%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 48 100% 50%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Custom tokens */
+    --vc-yellow: 48 100% 50%;
+    --vc-black: 0 0% 0%;
+    --eco-green: 130 50% 33%;
+    --section-alt: 210 20% 98%;
+    --shadow-card: 0 4px 20px -4px hsl(0 0% 0% / 0.08);
+    --shadow-card-hover: 0 12px 40px -8px hsl(0 0% 0% / 0.15);
+
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Merriweather', 'Noto Serif JP', serif;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply px-4 py-20 md:px-8 lg:px-16;
+  }
+
+  .section-alt {
+    background-color: hsl(var(--section-alt));
+  }
+
+  .card-3d {
+    box-shadow: var(--shadow-card);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card-3d:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  .text-heading {
+    @apply text-foreground;
+    font-family: 'Merriweather', 'Noto Serif JP', serif;
+  }
+
+  .text-body {
+    @apply text-foreground;
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-primary-foreground font-semibold px-6 py-3 rounded-lg transition-all duration-300;
+  }
+
+  .btn-primary:hover {
+    @apply opacity-90;
+    transform: translateY(-2px);
+  }
+}
