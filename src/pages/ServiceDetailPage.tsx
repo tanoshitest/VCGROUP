@@ -196,6 +196,63 @@ const ServiceDetailPage = ({ lang, setLang }: ServiceDetailPageProps) => {
         </section>
       )}
 
+      {/* 4.5 Project Showcase Carousel Section */}
+      <section className="py-24 bg-background border-t border-border overflow-hidden">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
+              {lang === "vi" ? "Dự án chúng tôi đã hoàn thành" : lang === "jp" ? "施工事例・実績" : "Completed Projects"}
+            </h2>
+            <div className="w-20 h-1.5 bg-primary mx-auto rounded-full"></div>
+          </div>
+
+          <div className="relative">
+            <motion.div 
+              className="flex gap-6"
+              animate={{ 
+                x: ["0%", "-50%"] 
+              }}
+              transition={{ 
+                duration: 30, 
+                ease: "linear", 
+                repeat: Infinity 
+              }}
+              style={{ width: "fit-content" }}
+            >
+              {[...translations.projects.items, ...translations.projects.items].map((project, i) => (
+                <div 
+                  key={`${project.id}-${i}`}
+                  onClick={() => navigate(`/projects/${project.id}`)}
+                  className="w-[280px] md:w-[calc(25%-18px)] flex-shrink-0 bg-card rounded-2xl overflow-hidden border border-border/50 group hover:shadow-xl transition-all duration-500 cursor-pointer"
+                >
+                  <div className="relative aspect-[4/3] overflow-hidden">
+                    <img 
+                      src={`/project-${(i % 6) + 1}.jpg`} 
+                      alt={t(project.title, lang)}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src = "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=400&fit=crop";
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-vc-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                      <div className="bg-white/90 text-vc-black px-4 py-2 rounded-full text-xs font-bold transform translate-y-4 group-hover:translate-y-0 transition-transform">
+                        {lang === "vi" ? "Xem chi tiết" : "View Details"}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="p-4 text-center">
+                    <h3 className="text-sm md:text-base font-heading font-bold line-clamp-1 group-hover:text-primary transition-colors">
+                      {t(project.title, lang)}
+                    </h3>
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* 5. CTA Section */}
       <section className="py-24 bg-primary relative overflow-hidden group">
         {/* Background decorative elements */}
