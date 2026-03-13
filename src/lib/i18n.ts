@@ -5,9 +5,10 @@ export const translations = {
     home: { jp: "ホーム", vi: "Trang chủ", en: "Home" },
     about: { jp: "会社概要", vi: "Về chúng tôi", en: "About Us" },
     services: { jp: "事業概要", vi: "Dịch vụ", en: "Services" },
-    projects: { jp: "施工事例", vi: "Dự án", en: "Projects" },
+    projects: { jp: "施工事例", vi: "Dự án của chúng tôi", en: "Projects" },
     contact: { jp: "お問い合わせ", vi: "Liên hệ", en: "Contact" },
     blog: { jp: "ブログ", vi: "Blog", en: "Blog" },
+    reuseCatalog: { jp: "中古品カタログ", vi: "Bán đồ cũ", en: "Reuse Catalog" },
   },
   hero: {
     headline: {
@@ -157,7 +158,56 @@ export const translations = {
           en: "We reuse and resell items that still have value.",
         },
         detail: {
-          vi: "Chúng tôi tin rằng mọi món đồ đều xứng đáng có cơ hội thứ hai. Tại VC GROUP, các sản phẩm được thu gom sẽ trải qua quy trình vệ sinh và kiểm định nghiêm ngặt trước khi được đưa đến tay chủ sở hữu mới với mức giá cực kỳ ti        { id: 1, category: "appliances", price: "￥5,000", title: { vi: "Tủ lạnh mini Panasonic", jp: "パナソニック製ミニ冷蔵庫", en: "Panasonic Mini Fridge" }, image: "https://images.unsplash.com/photo-1584622781564-1d9876a13d00?q=80&w=400&fit=crop" },
+          vi: "Chúng tôi tin rằng mọi món đồ đều xứng đáng có cơ hội thứ hai. Tại VC GROUP, các sản phẩm được thu gom sẽ trải qua quy trình vệ sinh và kiểm định nghiêm ngặt trước khi được đưa đến tay chủ sở hữu mới với mức giá cực kỳ tiết kiệm.",
+          jp: "すべてのモノには二度目のチャンスがあると私たちは信じています。VC GROUPでは、回収された品物を厳格な清掃と検品プロセスを経て、新しい持ち主の方へ非常にお得な価格でお届けしています。",
+          en: "We believe every item deserves a second chance. At VC GROUP, collected products undergo a rigorous cleaning and inspection process before being offered to new owners at extremely economical prices."
+        },
+        image: "https://images.unsplash.com/photo-1549194382-3d7798380845?q=80&w=1200",
+        video: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      },
+      {
+        id: "ac-service",
+        title: { jp: "エアコン取付・取外し", vi: "Lắp / tháo điều hòa", en: "AC Installation & Removal" },
+        desc: {
+          jp: "エアコンの取り付け・取り外しを専門スタッフが対応します。",
+          vi: "Đội ngũ chuyên nghiệp lắp đặt và tháo gỡ điều hòa.",
+          en: "Professional staff handle air conditioner installation and removal.",
+        },
+        detail: {
+          vi: "Kỹ thuật viên của chúng tôi có kinh nghiệm xử lý nhiều dòng máy điều hòa khác nhau, đảm bảo quy trình lắp đặt an toàn, đúng kỹ thuật và thẩm mỹ cao cho ngôi nhà của bạn.",
+          jp: "当社の技術者は、様々なメーカーのエアコンに対応する豊かな経験を持っています。安全で確実な技術、 assessments  assessments そして美観にも配慮した施工により、快適な空間づくりをサポートいたします。",
+          en: "Our technicians have experience handling various air conditioner brands, ensuring a safe, technically sound, and aesthetically pleasing installation for your home."
+        },
+        image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=1200",
+        video: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      },
+      {
+        id: "industrial-waste",
+        title: { jp: "産業廃棄物収集運搬", vi: "Thu gom & vận chuyển rác thải công nghiệp", en: "Industrial Waste Transport" },
+        desc: {
+          jp: "産業廃棄物の収集・運搬を法令に基づき適正に行います。",
+          vi: "Thu gom và vận chuyển rác thải công nghiệp đúng quy định pháp luật.",
+          en: "Lawful collection and transport of industrial waste.",
+        },
+        detail: {
+          vi: "VC GROUP cung cấp giải pháp vận chuyển rác thải công nghiệp cho các doanh nghiệp, cam kết tuân thủ đầy đủ các quy định về môi trường và xử lý chất thải theo đúng pháp luật.",
+          jp: "VC GROUPは企業様向けに産業廃棄物の運搬ソリューションを提供しています。環境規制を完全に遵守し、法令に則った適正な廃棄物処理を徹底いたします。",
+          en: "VC GROUP provides industrial waste transport solutions for businesses, committing to full compliance with environmental regulations and lawful waste processing."
+        },
+        image: "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?q=80&w=1200",
+        video: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      },
+    ],
+    catalog: {
+      categories: [
+        { id: "appliances", jp: "家電", vi: "Điện gia dụng", en: "Appliances" },
+        { id: "furniture", jp: "家具", vi: "Nội thất", en: "Furniture" },
+        { id: "kitchen", jp: "キッチン用品", vi: "Đồ bếp", en: "Kitchenware" },
+        { id: "baby", jp: "ベビー・キッズ", vi: "Mẹ & Bé", en: "Baby & Kids" },
+        { id: "others", jp: "その他", vi: "Đồ dùng khác", en: "Others" }
+      ],
+      products: [
+        { id: 1, category: "appliances", price: "￥5,000", title: { vi: "Tủ lạnh mini Panasonic", jp: "パナソニック製ミニ冷蔵庫", en: "Panasonic Mini Fridge" }, image: "https://images.unsplash.com/photo-1584622781564-1d9876a13d00?q=80&w=400&fit=crop" },
         { id: 2, category: "appliances", price: "￥3,000", title: { vi: "Lò vi sóng Sharp", jp: "シャープ製電子レンジ", en: "Sharp Microwave" }, image: "https://images.unsplash.com/photo-1574362848149-11496d93a7c7?q=80&w=400&fit=crop" },
         { id: 3, category: "appliances", price: "￥8,000", title: { vi: "Máy giặt Toshiba 6kg", jp: "東芝製洗濯機 6kg", en: "Toshiba Washing Machine 6kg" }, image: "https://images.unsplash.com/photo-1626806787461-102c1bfa71e5?q=80&w=400&fit=crop" },
         { id: 4, category: "appliances", price: "￥2,000", title: { vi: "Ấm đun nước Tiger", jp: "タイガー製電気ケトル", en: "Tiger Electric Kettle" }, image: "https://images.unsplash.com/photo-1594212699903-ee8a6664329a?q=80&w=400&fit=crop" },
@@ -169,30 +219,8 @@ export const translations = {
 
         { id: 9, category: "kitchen", price: "￥1,500", title: { vi: "Bộ nồi Inox 3 món", jp: "ステンレス鍋3点セット", en: "Stainless Steel Pot Set" }, image: "https://images.unsplash.com/photo-1584990344313-2d2fc570498a?q=80&w=400&fit=crop" },
         { id: 10, category: "kitchen", price: "￥800", title: { vi: "Bộ chén sứ 10 chiếc", jp: "磁器の茶碗10個セット", en: "Porcelain Bowl Set 10pcs" }, image: "https://images.unsplash.com/photo-1502444330834-31427a14e138?q=80&w=400&fit=crop" },
-        { id: 11, category: "kitchen", price: "￥2,500", title: { vi: "Máy xay sinh tố", jp: "ミミキサー・ジューサー", en: "Blender" }, image: "https://images.unsplash.com/photo-1570222094114-d054a817e56b?q=80&w=400&fit=crop" },
-        { id: 12, category: "kitchen", price: "￥1,200", title: { vi: "Chảo chống dính", jp: "焦げ付きにくいフライパン", en: "Non-stick Frying Pan" }, image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=400&fit=crop" },
-
-        { id: 13, category: "baby", price: "￥4,000", title: { vi: "Xe đẩy Combi", jp: "コンビ製ベビーカー", en: "Combi Baby Stroller" }, image: "https://images.unsplash.com/photo-1591954840741-63ba9198668c?q=80&w=400&fit=crop" },
-        { id: 14, category: "baby", price: "￥2,500", title: { vi: "Cũi gỗ cho bé", jp: "木製ベビーベッド", en: "Wooden Baby Crib" }, image: "https://images.unsplash.com/photo-1544126592-807daf215651?q=80&w=400&fit=crop" },
-        { id: 15, category: "baby", price: "￥1,000", title: { vi: "Ghế ăn dặm", jp: "ベビー用ハイチェア", en: "Baby High Chair" }, image: "https://images.unsplash.com/photo-1588854337236-6889d631faa8?q=80&w=400&fit=crop" },
-        { id: 16, category: "baby", price: "￥1,500", title: { vi: "Đồ chơi gỗ xếp hình", jp: "木製の知育パズル", en: "Wooden Puzzle Toys" }, image: "https://images.unsplash.com/photo-1515488764276-beab7607c1e6?q=80&w=400&fit=crop" },
-
-        { id: 17, category: "others", price: "￥6,000", title: { vi: "Xe đạp địa hình cũ", jp: "中古マウンテンバイク", en: "Used Mountain Bike" }, image: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?q=80&w=400&fit=crop" },
-        { id: 18, category: "others", price: "￥2,000", title: { vi: "Vali du lịch cỡ nhỡ", jp: "中型スーツケース", en: "Medium Suitcase" }, image: "https://images.unsplash.com/photo-1565026057447-bc90a3dceb87?q=80&w=400&fit=crop" },
-        { id: 19, category: "others", price: "￥1,500", title: { vi: "Đèn bàn làm việc", jp: "デスクライト", en: "Desk Lamp" }, image: "https://images.unsplash.com/photo-1534073828943-f801091bb18c?q=80&w=400&fit=crop" },
-        { id: 20, category: "others", price: "￥3,500", title: { vi: "Dụng cụ tập tạ tay", jp: "ダンベルセット", en: "Dumbbell Set" }, image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=400&fit=crop" }
-e89db7114c?q=80&w=400&fit=crop" },
-        { id: 4, category: "appliances", price: "￥2,000", title: { vi: "Ấm đun nước Tiger", jp: "タイガー製電気ケトル", en: "Tiger Electric Kettle" }, image: "https://images.unsplash.com/photo-1594212699903-ee8a6664329a?q=80&w=400&fit=crop" },
-        
-        { id: 5, category: "furniture", price: "￥12,000", title: { vi: "Bộ bàn ăn gỗ 4 ghế", jp: "木製ダイニングテーブルセット", en: "Wooden Dining Set" }, image: "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=400&fit=crop" },
-        { id: 6, category: "furniture", price: "￥7,000", title: { vi: "Sofa đơn màu xám", jp: "グレーのシングルソファ", en: "Grey Single Sofa" }, image: "https://images.unsplash.com/photo-1567016432779-094069958ea5?q=80&w=400&fit=crop" },
-        { id: 7, category: "furniture", price: "￥4,500", title: { vi: "Kệ sách 3 tầng gỗ", jp: "木製3段本棚", en: "3-Tier Wooden Bookshelf" }, image: "https://images.unsplash.com/photo-1594620302200-9a762244a156?q=80&w=400&fit=crop" },
-        { id: 8, category: "furniture", price: "￥9,000", title: { vi: "Giường đơn kèm nệm", jp: "マットレス付きシングルベッド", en: "Single Bed with Mattress" }, image: "https://images.unsplash.com/photo-1505693419173-42b925b20671?q=80&w=400&fit=crop" },
-
-        { id: 9, category: "kitchen", price: "￥1,500", title: { vi: "Bộ nồi Inox 3 món", jp: "ステンレス鍋3点セット", en: "Stainless Steel Pot Set" }, image: "https://images.unsplash.com/photo-1584990344313-2d2fc570498a?q=80&w=400&fit=crop" },
-        { id: 10, category: "kitchen", price: "￥800", title: { vi: "Bộ chén sứ 10 chiếc", jp: "磁器の茶碗10個セット", en: "Porcelain Bowl Set 10pcs" }, image: "https://images.unsplash.com/photo-1594913785162-e6785b42fbb1?q=80&w=400&fit=crop" },
         { id: 11, category: "kitchen", price: "￥2,500", title: { vi: "Máy xay sinh tố", jp: "ミキサー・ジューサー", en: "Blender" }, image: "https://images.unsplash.com/photo-1570222094114-d054a817e56b?q=80&w=400&fit=crop" },
-        { id: 12, category: "kitchen", price: "￥1,200", title: { vi: "Chảo chống dính", jp: "焦げ付きにくいフライパン", en: "Non-stick Frying Pan" }, image: "https://images.unsplash.com/photo-1584990344313-2d2fc570498a?q=80&w=400&fit=crop" },
+        { id: 12, category: "kitchen", price: "￥1,200", title: { vi: "Chảo chống dính", jp: "焦げ付きにくいフライパン", en: "Non-stick Frying Pan" }, image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=400&fit=crop" },
 
         { id: 13, category: "baby", price: "￥4,000", title: { vi: "Xe đẩy Combi", jp: "コンビ製ベビーカー", en: "Combi Baby Stroller" }, image: "https://images.unsplash.com/photo-1591954840741-63ba9198668c?q=80&w=400&fit=crop" },
         { id: 14, category: "baby", price: "￥2,500", title: { vi: "Cũi gỗ cho bé", jp: "木製ベビーベッド", en: "Wooden Baby Crib" }, image: "https://images.unsplash.com/photo-1544126592-807daf215651?q=80&w=400&fit=crop" },
