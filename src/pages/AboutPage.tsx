@@ -6,6 +6,7 @@ import CeoGreeting from "@/components/CeoGreeting";
 import CompanyInfo from "@/components/CompanyInfo";
 import WhyUs from "@/components/WhyUs";
 import { Target, Heart, Leaf } from "lucide-react";
+import PageBanner from "@/components/PageBanner";
 
 interface AboutPageProps {
   lang: Language;
@@ -46,6 +47,7 @@ const AboutPage = ({ lang, setLang }: AboutPageProps) => {
   return (
     <div className="min-h-screen bg-background">
       <Header lang={lang} setLang={setLang} />
+      <PageBanner />
 
       <section className="pt-24 pb-12 section-padding bg-primary/10">
         <div className="container mx-auto text-center">

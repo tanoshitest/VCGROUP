@@ -4,6 +4,7 @@ import { Language, translations, t } from "@/lib/i18n";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
+import PageBanner from "@/components/PageBanner";
 
 interface ContactPageProps {
   lang: Language;
@@ -43,6 +44,7 @@ const ContactPage = ({ lang, setLang }: ContactPageProps) => {
   return (
     <div className="min-h-screen bg-background">
       <Header lang={lang} setLang={setLang} />
+      <PageBanner />
 
       <section className="pt-24 pb-12 section-padding bg-primary/10">
         <div className="container mx-auto text-center">

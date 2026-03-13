@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Language, translations, t } from "@/lib/i18n";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PageBanner from "@/components/PageBanner";
 
 import project1 from "@/assets/project-1.jpg";
 import project2 from "@/assets/project-2.jpg";
@@ -57,6 +58,7 @@ const ProjectsPage = ({ lang, setLang }: ProjectsPageProps) => {
   return (
     <div className="min-h-screen bg-background">
       <Header lang={lang} setLang={setLang} />
+      <PageBanner />
 
       <section className="pt-24 pb-12 section-padding bg-primary/10">
         <div className="container mx-auto text-center">

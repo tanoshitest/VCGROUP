@@ -4,6 +4,7 @@ import { Language, translations, t } from "@/lib/i18n";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Process from "@/components/Process";
+import PageBanner from "@/components/PageBanner";
 
 interface ServicesPageProps {
   lang: Language;
@@ -49,6 +50,7 @@ const ServicesPage = ({ lang, setLang }: ServicesPageProps) => {
   return (
     <div className="min-h-screen bg-background">
       <Header lang={lang} setLang={setLang} />
+      <PageBanner />
 
       <section className="pt-24 pb-12 section-padding bg-primary/10">
         <div className="container mx-auto text-center">
