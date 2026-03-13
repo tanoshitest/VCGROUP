@@ -19,8 +19,8 @@ const Index = ({ lang, setLang }: IndexProps) => {
     <div className="min-h-screen bg-background">
       <Header lang={lang} setLang={setLang} />
       <Hero lang={lang} />
-      <Services lang={lang} />
       <CeoGreeting lang={lang} />
+      <Services lang={lang} />
       <Projects lang={lang} />
       <WhyUs lang={lang} />
       <Process lang={lang} />
