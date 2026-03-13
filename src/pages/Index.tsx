@@ -6,7 +6,6 @@ import CeoGreeting from "@/components/CeoGreeting";
 import Projects from "@/components/Projects";
 import WhyUs from "@/components/WhyUs";
 import Process from "@/components/Process";
-import CompanyInfo from "@/components/CompanyInfo";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 
