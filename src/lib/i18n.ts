@@ -7,6 +7,7 @@ export const translations = {
     services: { jp: "事業概要", vi: "Dịch vụ", en: "Services" },
     projects: { jp: "施工事例", vi: "Dự án", en: "Projects" },
     contact: { jp: "お問い合わせ", vi: "Liên hệ", en: "Contact" },
+    blog: { jp: "ブログ", vi: "Blog", en: "Blog" },
   },
   hero: {
     headline: {
@@ -14,6 +15,119 @@ export const translations = {
       vi: "Trân trọng những thứ còn sử dụng được\nThu gom đồ không dùng · Tái sử dụng · Dịch vụ thân thiện với môi trường",
       en: "Cherishing What Can Still Be Used\nJunk Removal · Reuse · Eco-Friendly Services",
     },
+  },
+  blog: {
+    title: { jp: "ブログ", vi: "Blog", en: "Blog" },
+    items: [
+      {
+        id: "eco-lifestyle-2024",
+        title: { jp: "2024年のエコライフ：不用品を減らす5つのコツ", vi: "Sống xanh 2024: 5 mẹo cắt giảm đồ dùng thừa", en: "Eco-Living 2024: 5 Tips to Reduce Waste" },
+        summary: { jp: "持続可能な生活を始めるための簡単な習慣をご紹介します。", vi: "Những thói quen đơn giản để bắt đầu cuộc sống bền vững.", en: "Simple habits to start a sustainable life." },
+        date: "2024-03-10",
+        image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=800&auto=format&fit=crop",
+        content: {
+          vi: "Sống xanh không khó như bạn nghĩ. Hãy bắt đầu bằng việc từ chối đồ nhựa dùng một lần và tái sử dụng những món đồ cũ trong nhà...",
+          jp: "エコライフは決して難しいことではありません。まずは使い捨てプラスチックを断り、家庭内の古いものを再利用することから始めましょう...",
+          en: "Living green is not as hard as you think. Start by refusing single-use plastics and reusing old items around your home..."
+        }
+      },
+      {
+        id: "junk-removal-guide",
+        title: { jp: "不用品回収の完全ガイド：スムーズな処分のために", vi: "Hướng dẫn thu gom đồ cũ: Để dẹp nhà thật gọn", en: "Junk Removal Guide: For a Smooth Disposal" },
+        summary: { jp: "効率的な仕分けと処分のプロのアドバイスをまとめました。", vi: "Lời khuyên chuyên nghiệp về cách phân loại và xử lý đồ hiệu quả.", en: "Professional advice on efficient sorting and disposal." },
+        date: "2024-03-05",
+        image: "https://images.unsplash.com/photo-1581578731522-745d05db9ad0?q=80&w=800&auto=format&fit=crop",
+        content: {
+          vi: "Khi đối mặt với một núi đồ cũ, quy trình 3 bước 'Giữ - Tặng - Bỏ' sẽ giúp bạn tiết kiệm thời gian đáng kể...",
+          jp: "山のような不用品を前にしたとき、「残す・譲る・捨てる」の3ステップが作業時間を大幅に短縮します...",
+          en: "When facing a mountain of junk, the 3-step 'Keep - Donate - Toss' process will save you significant time..."
+        }
+      },
+      {
+        id: "reuse-furniture-ideas",
+        title: { jp: "古い家具が見違える！DIYリユースアイデア集", vi: "Nội thất cũ lột xác! Ý tưởng tái sử dụng DIY", en: "Revive Old Furniture! DIY Reuse Ideas" },
+        summary: { jp: "捨ててしまう前に試したい、家具のアップサイクル術をご紹介。", vi: "Những cách làm mới nội thất độc đáo trước khi bạn định vứt bỏ chúng.", en: "Unique upcycling tricks to try before you toss your furniture." },
+        date: "2024-02-28",
+        image: "https://images.unsplash.com/photo-1538688525198-9b88f6f53126?q=80&w=800&auto=format&fit=crop",
+        content: {
+          vi: "Một lớp sơn mới hoặc thay đổi tay cầm có thể biến chiếc tủ cũ kỹ thành điểm nhấn nghệ thuật trong phòng khách...",
+          jp: "新しいペンキを塗ったり、取っ手を変えたりするだけで、古いタンスがリビングの芸術的なアクセントに変わります...",
+          en: "A fresh coat of paint or changing the handles can turn an old cabinet into an artistic centerpiece in your living room..."
+        }
+      },
+      {
+        id: "spring-cleaning-2024",
+        title: { jp: "春の大掃除大作戦：心も部屋もリフレッシュ", vi: "Đại chiến dọn nhà mùa xuân: Làm mới không gian", en: "Spring Cleaning Strategy: Refresh Your Mind" },
+        summary: { jp: "新しい季節を迎えるための、計画的な掃除の進め方。", vi: "Cách lên kế hoạch dọn dẹp để đón chào mùa mới tràn đầy năng lượng.", en: "How to plan your cleaning to welcome the new season with energy." },
+        date: "2024-02-20",
+        image: "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?q=80&w=800&auto=format&fit=crop",
+        content: {
+          vi: "Dọn dẹp không chỉ là làm sạch không gian mà còn là liệu pháp giúp tinh thần minh mẫn hơn...",
+          jp: "掃除はただ空間を綺麗にするだけでなく、精神をリフレッシュさせるセラピーでもあります...",
+          en: "Cleaning is not just about making space; it's also a therapy to clear your mind..."
+        }
+      },
+      {
+        id: "ac-maintenance-tips",
+        title: { jp: "エアコンを長持ちさせるための日常のメンテナンス", vi: "Mẹo bảo dưỡng điều hòa: Dùng bền và tiết kiệm", en: "AC Maintenance Tips: Longevity and Savings" },
+        summary: { jp: "専門業者を呼ぶ前にできる、簡単なフィルター掃除術。", vi: "Cách vệ sinh lưới lọc đơn giản trước khi gọi thợ chuyên môn.", en: "Simple filter cleaning tricks you can do before calling a pro." },
+        date: "2024-02-15",
+        image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=800&auto=format&fit=crop",
+        content: {
+          vi: "Vệ sinh lưới lọc hàng tháng không chỉ giúp máy chạy êm mà còn tiết kiệm đến 15% điện năng tiêu thụ...",
+          jp: "毎月のフィルター掃除は、動作をスムーズにするだけでなく、電気代を最大15%節約できます...",
+          en: "Monthly filter cleaning not only makes the machine run smoothly but also saves up to 15% on energy..."
+        }
+      },
+      {
+        id: "industrial-waste-laws",
+        title: { jp: "産業廃棄物管理の基本：企業が守るべき法令とは", vi: "Cơ bản về quản lý rác thải: Quy định cho doanh nghiệp", en: "Industrial Waste Basics: Laws for Businesses" },
+        summary: { jp: "環境保護とコンプライアンスのための重要ポイントを解説。", vi: "Giải thích các điểm quan trọng về bảo vệ môi trường và tuân thủ pháp luật.", en: "Explaining key points for environmental protection and compliance." },
+        date: "2024-02-01",
+        image: "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?q=80&w=800&auto=format&fit=crop",
+        content: {
+          vi: "Quản lý rác thải công nghiệp đòi hỏi sự am hiểu về các chứng từ vận chuyển và quy trình xử lý an toàn...",
+          jp: "産業廃棄物の管理には、運搬証明書や安全な処理工程に関する知識が不可欠です...",
+          en: "Industrial waste management requires understanding of transport manifests and safe processing procedures..."
+        }
+      },
+      {
+        id: "circular-economy-future",
+        title: { jp: "循環型社会（サーキュラーエコノミー）の未来", vi: "Tương lai của kinh tế tuần hoàn: Xu hướng tất yếu", en: "Future of Circular Economy: Inevitable Trend" },
+        summary: { jp: "リユースとリサイクルが変える、これからの経済モデル。", vi: "Mô hình kinh tế mới thay đổi nhờ tái sử dụng và tái chế.", en: "New economic models changing through reuse and recycling." },
+        date: "2024-01-25",
+        image: "https://images.unsplash.com/photo-1536939459926-301728717817?q=80&w=800&auto=format&fit=crop",
+        content: {
+          vi: "Kinh tế tuần hoàn không chỉ bảo vệ tài nguyên mà còn tạo ra những cơ hội kinh doanh mới đầy tiềm năng...",
+          jp: "循環型社会は資源を守るだけでなく、新たなビジネスチャンスを生み出す可能性を秘めています...",
+          en: "Circular economy not only saves resources but also creates potential new business opportunities..."
+        }
+      },
+      {
+        id: "decluttering-psychology",
+        title: { jp: "断捨離の心理学：物を手放して自由になる方法", vi: "Tâm lý học dọn dẹp: Buông bỏ đồ đạc để tự do", en: "Psychology of Decluttering: Letting Go to Be Free" },
+        summary: { jp: "なぜ物を溜め込んでしまうのか？その心の壁を乗り越える方法。", vi: "Tại sao chúng ta hay tích trữ? Cách vượt qua rào cản tâm lý để dọn dẹp.", en: "Why do we hoard? How to overcome mental barriers to clean up." },
+        date: "2024-01-10",
+        image: "https://images.unsplash.com/photo-1549194382-3d7798380845?q=80&w=800&auto=format&fit=crop",
+        content: {
+          vi: "Gắn bó quá mức với đồ vật đôi khi ngăn cản bạn đón nhận những trải nghiệm mới trong cuộc sống...",
+          jp: "物への過度な執着は、時に新しい人生の経験を妨げる原因となります...",
+          en: "Over-attachment to items sometimes prevents you from embracing new life experiences..."
+        }
+      },
+      {
+        id: "vc-group-mission-2024",
+        title: { jp: "VC GROUPの2024年の展望と使命", vi: "Tầm nhìn và sứ mệnh VC GROUP trong năm 2024", en: "VC GROUP's 2024 Vision and Mission" },
+        summary: { jp: "地域社会への貢献と、環境保護活動への取り組みについて。", vi: "Về việc đóng góp cho cộng đồng và các hoạt động bảo vệ môi trường.", en: "About community contribution and environmental protection efforts." },
+        date: "2024-01-01",
+        image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop",
+        content: {
+          vi: "Năm 2024, chúng tôi đặt mục tiêu nâng cao tỷ lệ tái sử dụng đồ cũ lên 90% thông qua các quy trình hiện đại...",
+          jp: "2024年、私たちは最新のプロセスを通じてリユース率90%達成を目標に掲げています...",
+          en: "In 2024, we aim to increase the reuse rate to 90% through modern systematic processes..."
+        }
+      },
+    ]
   },
   services: {
     title: { jp: "事業概要", vi: "Tổng quan dịch vụ", en: "Our Services" },

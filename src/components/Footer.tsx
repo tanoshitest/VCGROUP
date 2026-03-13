@@ -1,7 +1,11 @@
 import { Phone, Mail, MapPin, Clock, Globe, Facebook, MessageCircle } from "lucide-react";
-import { translations } from "@/lib/i18n";
+import { Language, translations } from "@/lib/i18n";
 
-const Footer = () => {
+interface FooterProps {
+  lang: Language;
+}
+
+const Footer = ({ lang }: FooterProps) => {
   const c = translations.company;
 
   return (
