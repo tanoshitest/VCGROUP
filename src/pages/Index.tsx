@@ -24,7 +24,11 @@ const Index = ({ lang, setLang }: IndexProps) => {
       <Projects lang={lang} />
       <WhyUs lang={lang} />
       <Process lang={lang} />
-      <ContactForm lang={lang} />
+      <section id="contact" className="section-padding section-alt">
+        <div className="container mx-auto max-w-6xl">
+          <ContactForm lang={lang} />
+        </div>
+      </section>
       <Footer />
     </div>
   );
