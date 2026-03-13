@@ -12,7 +12,20 @@ import project4 from "@/assets/project-4.jpg";
 import project5 from "@/assets/project-5.jpg";
 import project6 from "@/assets/project-6.jpg";
 
+import diary1 from "@/assets/work-diary-1.png";
+import diary2 from "@/assets/work-diary-2.png";
+import diary3 from "@/assets/work-diary-3.png";
+import diary4 from "@/assets/work-diary-4.png";
+import diary5 from "@/assets/work-diary-5.png";
+
 const images = [project1, project2, project3, project4, project5, project6];
+const diaryImages = [
+  { src: diary1, className: "w-64 aspect-[4/3] rounded-2xl" },
+  { src: diary2, className: "w-96 aspect-video rounded-3xl" },
+  { src: diary3, className: "w-72 aspect-square rounded-full" },
+  { src: diary4, className: "w-80 aspect-[16/10] rounded-tl-3xl rounded-br-3xl" },
+  { src: diary5, className: "w-56 aspect-[3/4] rounded-xl" },
+];
 
 interface ProjectDetailPageProps {
   lang: Language;
@@ -99,17 +112,17 @@ const ProjectDetailPage = ({ lang, setLang }: ProjectDetailPageProps) => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="space-y-4">
-              <div className="relative rounded-xl overflow-hidden h-64 bg-muted flex items-center justify-center">
-                <span className="absolute top-4 left-4 z-10 bg-vc-black/50 text-white px-3 py-1 rounded-md text-sm">BEFORE</span>
-                <p className="text-muted-foreground px-8 text-center">{t(project.before, lang)}</p>
+              <div className="relative rounded-xl overflow-hidden aspect-video bg-muted flex items-center justify-center border border-border">
+                <span className="absolute top-4 left-4 z-10 bg-vc-black/50 text-white px-3 py-1 rounded-md text-sm font-body">BEFORE</span>
+                <p className="text-muted-foreground px-8 text-center font-body">{t(project.before, lang)}</p>
               </div>
-              <p className="text-sm font-body italic text-muted-foreground italic">
+              <p className="text-sm font-body italic text-muted-foreground">
                 * {lang === "vi" ? "Hiện trạng thực tế khi khảo sát" : "Original condition during survey"}
               </p>
             </div>
             <div className="space-y-4">
-              <div className="relative rounded-xl overflow-hidden h-64 shadow-lg">
-                <span className="absolute top-4 left-4 z-10 bg-eco-green text-white px-3 py-1 rounded-md text-sm">AFTER</span>
+              <div className="relative rounded-xl overflow-hidden aspect-video shadow-lg">
+                <span className="absolute top-4 left-4 z-10 bg-eco-green text-white px-3 py-1 rounded-md text-sm font-body">AFTER</span>
                 <img src={images[projectIndex]} className="w-full h-full object-cover" alt="Result" />
               </div>
               <p className="text-sm font-body text-foreground font-semibold">
@@ -139,8 +152,36 @@ const ProjectDetailPage = ({ lang, setLang }: ProjectDetailPageProps) => {
         </div>
       </section>
 
+      {/* Work Diary Gallery Section */}
+      <section className="py-20 overflow-hidden bg-background">
+        <div className="container mx-auto px-4 mb-12 text-center">
+          <h2 className="text-3xl font-heading font-bold mb-4">
+             {lang === "vi" ? "Nhật ký làm việc" : lang === "jp" ? "作業の様子" : "Company Work Diary"}
+          </h2>
+          <p className="text-muted-foreground font-body">
+            {lang === "vi" 
+              ? "Một số hình ảnh thực tế từ các dự án của đội ngũ VC GROUP." 
+              : "Glimpses behind the scenes as our team completes various projects."}
+          </p>
+        </div>
+        
+        <div className="relative w-full overflow-hidden whitespace-nowrap py-4">
+          <div className="inline-flex gap-8 items-center animate-marquee w-max select-none hover:[animation-play-state:paused] pr-8">
+            {/* Array doubled for seamless seamless loop */}
+            {[...diaryImages, ...diaryImages].map((img, i) => (
+              <img
+                key={i}
+                src={img.src}
+                className={`${img.className} object-cover shadow-md pointer-events-none flex-shrink-0 transition-transform hover:scale-105 duration-300`}
+                alt="Work Diary"
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Trust Section */}
-      <section className="section-padding">
+      <section className="section-padding bg-muted/30">
         <div className="container mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-heading font-bold mb-4">
