@@ -84,10 +84,11 @@ const ContactPage = ({ lang, setLang }: ContactPageProps) => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
+                  className="h-full"
                 >
                   <Wrapper
                     {...(card.href ? { href: card.href } : {})}
-                    className="card-3d bg-card rounded-xl p-6 text-center block hover:ring-2 hover:ring-primary/30 transition-all"
+                    className="card-3d bg-card rounded-xl p-6 text-center block hover:ring-2 hover:ring-primary/30 transition-all h-full"
                   >
                     <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-primary/20 flex items-center justify-center">
                       <Icon className="text-vc-black" size={22} />
