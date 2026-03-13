@@ -60,9 +60,15 @@ const ContactForm = ({ lang }: ContactFormProps) => {
         {[
           { name: "name", label: t(c.name, lang), type: "text" },
           { name: "phone", label: t(c.phone, lang), type: "tel" },
-          { name: "email", label: t(c.email, lang), type: "email" },
+          { name: "email", label: t(c.email, lang), type: "email", span: true },
+          {
+            name: "address",
+            label: lang === "jp" ? "ご住所" : lang === "vi" ? "Địa chỉ" : "Address",
+            type: "text",
+            span: true,
+          },
         ].map((field) => (
-          <div key={field.name} className={field.name === "email" ? "md:col-span-2" : ""}>
+          <div key={field.name} className={field.span ? "md:col-span-2" : ""}>
             <label className="block text-sm font-body font-medium text-foreground mb-1.5">{field.label}</label>
             <input
               type={field.type}
