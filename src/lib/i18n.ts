@@ -36,7 +36,7 @@ export const translations = {
         title: { jp: "不用品回収の完全ガイド：スムーズな処分のために", vi: "Hướng dẫn thu gom đồ cũ: Để dẹp nhà thật gọn", en: "Junk Removal Guide: For a Smooth Disposal" },
         summary: { jp: "効率的な仕分けと処分のプロのアドバイスをまとめました。", vi: "Lời khuyên chuyên nghiệp về cách phân loại và xử lý đồ hiệu quả.", en: "Professional advice on efficient sorting and disposal." },
         date: "2024-03-05",
-        image: "https://images.unsplash.com/photo-1581578731522-745d05db9ad0?q=80&w=800&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1530587191325-3db32d826c18?q=80&w=800&auto=format&fit=crop",
         content: {
           vi: "Khi đối mặt với một núi đồ cũ, quy trình 3 bước 'Giữ - Tặng - Bỏ' sẽ giúp bạn tiết kiệm thời gian đáng kể...",
           jp: "山のような不用品を前にしたとき、「残す・譲る・捨てる」の3ステップが作業時間を大幅に短縮します...",
@@ -108,10 +108,10 @@ export const translations = {
         title: { jp: "断捨離の心理学：物を手放して自由になる方法", vi: "Tâm lý học dọn dẹp: Buông bỏ đồ đạc để tự do", en: "Psychology of Decluttering: Letting Go to Be Free" },
         summary: { jp: "なぜ物を溜め込んでしまうのか？その心の壁を乗り越える方法。", vi: "Tại sao chúng ta hay tích trữ? Cách vượt qua rào cản tâm lý để dọn dẹp.", en: "Why do we hoard? How to overcome mental barriers to clean up." },
         date: "2024-01-10",
-        image: "https://images.unsplash.com/photo-1549194382-3d7798380845?q=80&w=800&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=800&auto=format&fit=crop",
         content: {
           vi: "Gắn bó quá mức với đồ vật đôi khi ngăn cản bạn đón nhận những trải nghiệm mới trong cuộc sống...",
-          jp: "物への過度な執着は、時に新しい人生の経験を妨げる原因となります...",
+          jp: "物への過度な執着は、時に新しい人生 của 経験を妨げる原因となります...",
           en: "Over-attachment to items sometimes prevents you from embracing new life experiences..."
         }
       },
