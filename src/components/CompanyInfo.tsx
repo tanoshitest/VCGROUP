@@ -41,17 +41,15 @@ const CompanyInfo = ({ lang }: CompanyInfoProps) => {
             className="mb-12"
           >
             <h3 className="text-2xl md:text-3xl font-heading font-bold mb-8 text-foreground text-center lg:text-left">{c.name}</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-6">
               {details.map((d, i) => (
-                <div key={i} className="flex items-start gap-4 p-4 rounded-xl bg-card border border-border shadow-sm hover:shadow-md transition-shadow">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <d.icon className="text-primary" size={20} />
-                  </div>
+                <div key={i} className="flex items-start gap-4">
+                  <d.icon className="text-eco-green mt-1 flex-shrink-0" size={20} />
                   <div>
-                    <span className="text-xs font-body font-semibold text-muted-foreground uppercase tracking-wider block mb-1">
+                    <span className="text-xs font-body font-semibold text-muted-foreground uppercase tracking-wide block mb-1">
                       {d.label}
                     </span>
-                    <p className="font-body text-foreground whitespace-pre-line leading-relaxed text-sm md:text-base">
+                    <p className="font-body text-foreground whitespace-pre-line leading-relaxed">
                       {d.value}
                     </p>
                   </div>
