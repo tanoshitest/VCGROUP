@@ -12,6 +12,9 @@ import project4 from "@/assets/project-4.jpg";
 import project5 from "@/assets/project-5.jpg";
 import project6 from "@/assets/project-6.jpg";
 
+import aptBefore from "@/assets/apt-before.png";
+import aptAfter from "@/assets/apt-after.png";
+
 import diary1 from "@/assets/work-diary-1.png";
 import diary2 from "@/assets/work-diary-2.png";
 import diary3 from "@/assets/work-diary-3.png";
@@ -40,6 +43,17 @@ const ProjectDetailPage = ({ lang, setLang }: ProjectDetailPageProps) => {
   if (!project) {
     return <div>Project not found</div>;
   }
+
+  const beforeImages: Record<string, string> = {
+    "apartment-junk": aptBefore,
+  };
+
+  const afterImages: Record<string, string> = {
+    "apartment-junk": aptAfter,
+  };
+
+  const currentBeforeImage = beforeImages[project.id];
+  const currentAfterImage = afterImages[project.id] || images[projectIndex];
 
   const renderTrustBadge = (icon: any, title: string, desc: string) => (
     <div className="flex flex-col items-center p-6 bg-background rounded-xl shadow-sm border border-border">
@@ -113,8 +127,12 @@ const ProjectDetailPage = ({ lang, setLang }: ProjectDetailPageProps) => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="space-y-4">
               <div className="relative rounded-xl overflow-hidden aspect-video bg-muted flex items-center justify-center border border-border">
-                <span className="absolute top-4 left-4 z-10 bg-vc-black/50 text-white px-3 py-1 rounded-md text-sm font-body">BEFORE</span>
-                <p className="text-muted-foreground px-8 text-center font-body">{t(project.before, lang)}</p>
+                <span className="absolute top-4 left-4 z-10 bg-vc-black/50 text-white px-3 py-1 rounded-md text-sm font-body shadow-sm">BEFORE</span>
+                {currentBeforeImage ? (
+                  <img src={currentBeforeImage} className="w-full h-full object-cover" alt="Before" />
+                ) : (
+                  <p className="text-muted-foreground px-8 text-center font-body">{t(project.before, lang)}</p>
+                )}
               </div>
               <p className="text-sm font-body italic text-muted-foreground">
                 * {lang === "vi" ? "Hiện trạng thực tế khi khảo sát" : "Original condition during survey"}
@@ -122,8 +140,8 @@ const ProjectDetailPage = ({ lang, setLang }: ProjectDetailPageProps) => {
             </div>
             <div className="space-y-4">
               <div className="relative rounded-xl overflow-hidden aspect-video shadow-lg">
-                <span className="absolute top-4 left-4 z-10 bg-eco-green text-white px-3 py-1 rounded-md text-sm font-body">AFTER</span>
-                <img src={images[projectIndex]} className="w-full h-full object-cover" alt="Result" />
+                <span className="absolute top-4 left-4 z-10 bg-eco-green text-white px-3 py-1 rounded-md text-sm font-body shadow-sm">AFTER</span>
+                <img src={currentAfterImage} className="w-full h-full object-cover" alt="Result" />
               </div>
               <p className="text-sm font-body text-foreground font-semibold">
                  {t(project.after, lang)}
