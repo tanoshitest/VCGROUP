@@ -16,35 +16,49 @@ const slogans = {
 const Typewriter = ({ text }: { text: string }) => {
   const [displayed, setDisplayed] = useState("");
   const [idx, setIdx] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
     setDisplayed("");
     setIdx(0);
+    setIsDeleting(false);
   }, [text]);
 
   useEffect(() => {
-    if (idx < text.length) {
+    const timeout = isDeleting ? 30 : 50;
+    
+    if (!isDeleting && idx < text.length) {
       const timer = setTimeout(() => {
         setDisplayed((prev) => prev + text[idx]);
         setIdx((i) => i + 1);
-      }, 50);
+      }, timeout);
       return () => clearTimeout(timer);
+    } else if (!isDeleting && idx === text.length) {
+      // Pause at the end before deleting
+      const timer = setTimeout(() => {
+        setIsDeleting(true);
+      }, 2000);
+      return () => clearTimeout(timer);
+    } else if (isDeleting && idx > 0) {
+      const timer = setTimeout(() => {
+        setDisplayed((prev) => prev.slice(0, -1));
+        setIdx((i) => i - 1);
+      }, timeout);
+      return () => clearTimeout(timer);
+    } else if (isDeleting && idx === 0) {
+      setIsDeleting(false);
     }
-  }, [idx, text]);
+  }, [idx, isDeleting, text]);
 
   return (
     <span>
       {displayed}
-      {idx < text.length && (
-        <span className="animate-pulse">|</span>
-      )}
+      <span className="animate-pulse">|</span>
     </span>
   );
 };
 
 const Hero = ({ lang }: HeroProps) => {
-  const headline = t(translations.hero.headline, lang);
-
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div
@@ -58,24 +72,21 @@ const Hero = ({ lang }: HeroProps) => {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="relative z-10 text-center px-4 max-w-4xl"
       >
-        {/* Typewriter slogan */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.3 }}
-          className="text-lg md:text-2xl font-body text-yellow-300 font-semibold mb-6 tracking-wide"
-        >
-          <Typewriter text={slogans[lang] ?? slogans.jp} />
-        </motion.p>
-
-        <h1 className="text-3xl md:text-5xl lg:text-6xl font-heading font-bold leading-tight text-accent-foreground whitespace-pre-line">
-          {headline}
-        </h1>
+        {/* Typewriter slogan - Infinite loop */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.5 }}
-          className="mt-8"
+          transition={{ delay: 0.3 }}
+          className="text-2xl md:text-4xl lg:text-5xl font-heading font-bold text-yellow-300 tracking-wide min-h-[1.5em]"
+        >
+          <Typewriter text={slogans[lang] ?? slogans.jp} />
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.8 }}
+          className="mt-12"
         >
           <a href="/services" className="btn-primary inline-block text-lg">
             {t(translations.nav.services, lang)}
