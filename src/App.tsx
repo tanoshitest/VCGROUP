@@ -28,7 +28,9 @@ import NotFound from "./pages/NotFound.tsx";
 const queryClient = new QueryClient();
 
 const App = () => {
-  const [lang, setLang] = useState<Language>("vi");
+  // Check if current path is admin to set initial default language
+  const isInitialAdmin = window.location.pathname.startsWith("/admin");
+  const [lang, setLang] = useState<Language>(isInitialAdmin ? "vi" : "jp");
 
   return (
     <QueryClientProvider client={queryClient}>
