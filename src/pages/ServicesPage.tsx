@@ -88,14 +88,19 @@ const ServicesPage = ({ lang, setLang }: ServicesPageProps) => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className={`flex flex-col ${isEven ? "md:flex-row" : "md:flex-row-reverse"} items-center gap-10 max-w-5xl mx-auto`}
+                className={`flex flex-col ${isEven ? "md:flex-row" : "md:flex-row-reverse"} items-center gap-10 max-w-5xl mx-auto relative bg-card p-8 rounded-2xl shadow-sm border border-border`}
               >
-                <div className="flex-shrink-0">
+                {/* Mascot Image positioned at the bottom corner depending on layout */}
+                <div className={`absolute bottom-0 ${isEven ? 'right-0 md:right-4' : 'left-0 md:left-4'} h-48 md:h-[105%] opacity-90 pointer-events-none z-0`}>
+                   <img src="/assets/mascot.png" alt="VC Group Mascot" className={`w-auto h-full object-contain object-bottom drop-shadow-2xl ${!isEven ? 'scale-x-[-1]' : ''}`} />
+                </div>
+
+                <div className="flex-shrink-0 z-10 transition-transform duration-500 group-hover:scale-105">
                   <div className="w-32 h-32 rounded-2xl bg-primary/20 flex items-center justify-center shadow-lg">
                     <Icon className="text-vc-black" size={56} />
                   </div>
                 </div>
-                <div className="flex-1">
+                <div className={`flex-1 z-10 relative pb-16 md:pb-0 ${isEven ? 'pr-20 md:pr-48 lg:pr-72' : 'pl-20 md:pl-48 lg:pl-72'}`}>
                   <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-4">
                     {t(item.title, lang)}
                   </h2>
@@ -119,7 +124,7 @@ const ServicesPage = ({ lang, setLang }: ServicesPageProps) => {
                   >
                     <a 
                       href={item.id === "reuse-sales" ? "/reuse-catalog" : `/services/${item.id}`} 
-                      className="btn-outline inline-flex items-center gap-2 group"
+                      className="btn-outline inline-flex items-center gap-2 group bg-background"
                     >
                       {lang === "vi" ? "Xem thêm" : lang === "jp" ? "もっと見る" : "See more"}
                       <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />

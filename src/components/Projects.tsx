@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import { Language, translations, t } from "@/lib/i18n";
 
 import project1 from "@/assets/project-1.jpg";
@@ -16,6 +17,7 @@ interface ProjectsProps {
 
 const Projects = ({ lang }: ProjectsProps) => {
   const { title, viewMore, items } = translations.projects;
+  const navigate = useNavigate();
 
   return (
     <section id="projects" className="section-padding section-alt">
@@ -37,7 +39,8 @@ const Projects = ({ lang }: ProjectsProps) => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.05 }}
-              className="card-3d rounded-xl overflow-hidden bg-card flex flex-col group"
+              onClick={() => navigate(`/projects/${item.id}`)}
+              className="card-3d rounded-xl overflow-hidden bg-card flex flex-col group cursor-pointer"
             >
               <div className="w-full h-56 overflow-hidden">
                 <img
@@ -47,13 +50,12 @@ const Projects = ({ lang }: ProjectsProps) => {
                   loading="lazy"
                 />
               </div>
-              <div className="p-5 text-center bg-card">
-                <h3 className="font-heading font-bold text-lg text-foreground">{t(item.title, lang)}</h3>
+              <div className="p-5 text-center bg-card transition-colors duration-300 group-hover:bg-primary/5">
+                <h3 className="font-heading font-bold text-lg text-foreground group-hover:text-primary transition-colors">{t(item.title, lang)}</h3>
               </div>
             </motion.div>
           ))}
         </div>
-
 
       </div>
     </section>
