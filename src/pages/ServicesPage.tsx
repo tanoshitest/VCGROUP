@@ -92,7 +92,7 @@ const ServicesPage = ({ lang, setLang }: ServicesPageProps) => {
               >
                 {/* Mascot Image positioned at the bottom corner depending on layout */}
                 <div className={`absolute bottom-0 ${isEven ? 'right-0 md:right-4' : 'left-0 md:left-4'} h-48 md:h-[105%] opacity-90 pointer-events-none z-0`}>
-                   <img src="/assets/mascot.png" alt="VC Group Mascot" className={`w-auto h-full object-contain object-bottom drop-shadow-2xl ${!isEven ? 'scale-x-[-1]' : ''}`} />
+                   <img src="/assets/mascot.png" alt="VC Group Mascot" className={`w-auto h-full object-contain object-bottom mix-blend-multiply ${!isEven ? 'scale-x-[-1]' : ''}`} />
                 </div>
 
                 <div className="flex-shrink-0 z-10 transition-transform duration-500 group-hover:scale-105">
