@@ -1,4 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Language, translations, t } from "@/lib/i18n";
 import Header from "@/components/Header";
@@ -15,6 +16,10 @@ const BlogDetailPage = ({ lang, setLang }: BlogDetailPageProps) => {
   const { id } = useParams();
   const navigate = useNavigate();
   const post = translations.blog.items.find((item) => item.id === id);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id]);
 
   if (!post) {
     return (
@@ -40,7 +45,7 @@ const BlogDetailPage = ({ lang, setLang }: BlogDetailPageProps) => {
             className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors mb-8"
           >
             <ArrowLeft size={20} />
-            <span>{lang === "vi" ? "Quay lại danh sách" : lang === "jp" ? "一覧に戻る" : "Back to list"}</span>
+            <span>{t(translations.common.backToList, lang)}</span>
           </motion.button>
 
           <article>
@@ -75,11 +80,7 @@ const BlogDetailPage = ({ lang, setLang }: BlogDetailPageProps) => {
                 <div className="whitespace-pre-wrap text-foreground/90 leading-loose text-lg">
                   {t(post.content, lang)}
                   {"\n\n"}
-                  {lang === "vi" 
-                    ? "Chúng tôi tin rằng mỗi bước nhỏ trong việc dọn dẹp và tái sử dụng đều đóng góp to lớn vào việc bảo vệ hành tinh xanh. Hãy đồng hành cùng VC GROUP trong hành trình ý nghĩa này."
-                    : lang === "jp"
-                    ? "私たちは、片付けやリユースにおける小さな一歩が、緑豊かな地球を守るための大きな貢献になると信じています。この意義深い旅に、ぜひVC GROUPと共に歩んでください。"
-                    : "We believe that every small step in cleaning and reusing contributes greatly to protecting our green planet. Join VC GROUP on this meaningful journey."}
+                  {t(translations.blogDetail.journeyText, lang)}
                 </div>
               </div>
 

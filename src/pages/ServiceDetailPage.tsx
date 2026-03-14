@@ -1,4 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Language, translations, t } from "@/lib/i18n";
 import Header from "@/components/Header";
@@ -15,6 +16,10 @@ const ServiceDetailPage = ({ lang, setLang }: ServiceDetailPageProps) => {
   const { id } = useParams();
   const navigate = useNavigate();
   const service = translations.services.items.find((s) => s.id === id);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id]);
 
   if (!service) {
     return (
@@ -50,7 +55,7 @@ const ServiceDetailPage = ({ lang, setLang }: ServiceDetailPageProps) => {
             className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors mb-8 group w-fit"
           >
             <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
-            <span>{lang === "vi" ? "Quay lại danh sách dịch vụ" : lang === "jp" ? "サービス一覧に戻る" : "Back to Services"}</span>
+            <span>{t(translations.common.backToServices, lang)}</span>
           </motion.button>
 
           <motion.div
@@ -80,32 +85,27 @@ const ServiceDetailPage = ({ lang, setLang }: ServiceDetailPageProps) => {
             >
               <div className="space-y-4">
                 <h2 className="text-3xl md:text-4xl font-heading font-bold text-vc-black dark:text-white relative inline-block">
-                  {lang === "vi" ? "Tổng quan giải pháp" : lang === "jp" ? "ソリューション概要" : "Solution Overview"}
+                  {t(translations.serviceDetail.overviewTitle, lang)}
                   <span className="absolute -bottom-2 left-0 w-16 h-1 bg-primary"></span>
                 </h2>
               </div>
               
               <div className="text-lg leading-[1.8] text-muted-foreground space-y-4">
                 <p>
-                  {lang === "vi" 
-                    ? "VC GROUP thấu hiểu những khó khăn của khách hàng khi đối mặt với rác thải hay các vấn đề kỹ thuật tại nhà. Chúng tôi mang đến hệ thống giải pháp toàn diện, từ khâu tiếp nhận thông tin, khảo sát hiện trường đến triển khai thực tế."
-                    : lang === "jp"
-                    ? "VC GROUPは、不用品処分や技術的な課題に直面した際のお客様の負担を深く理解しています。情報の受付から現地調査、そして実際の作業まで、一貫したトータルソリューションを提供します。"
-                    : "VC GROUP understands the challenges customers face with waste or technical issues at home. We provide a comprehensive system of solutions, from information intake and site survey to actual implementation."}
+                  {t(translations.serviceDetail.overviewP1, lang)}
                 </p>
                 <p>
-                  {lang === "vi" 
-                    ? "Tiêu chuẩn Nhật Bản luôn được đặt lên hàng đầu trong mỗi bước thực hiện, đảm bảo sự an tâm tuyệt đối cho quý khách hàng."
-                    : lang === "jp"
-                    ? "すべての工程において、日本品質の基準を最優先にしており、お客様に絶対的な安心をお届けします。"
-                    : "Japanese standards are prioritized in every step, ensuring absolute peace of mind for our customers."}
+                  {t(translations.serviceDetail.overviewP2, lang)}
                 </p>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-border/50">
-                {(lang === "vi" ? ["Uy tín vượt trội", "Tận tâm hỗ trợ", "Giá cả minh bạch", "Chất lượng chuẩn Nhật"] 
-                  : lang === "jp" ? ["卓越した信頼", "誠実なサポート", "透明な価格設定", "日本品質の施工"] 
-                  : ["Superior Trust", "Dedicated Support", "Transparent Pricing", "Japanese Standard"]).map((tag, i) => (
+                {[
+                  t(translations.serviceDetail.tags.trust, lang),
+                  t(translations.serviceDetail.tags.support, lang),
+                  t(translations.serviceDetail.tags.price, lang),
+                  t(translations.serviceDetail.tags.quality, lang)
+                ].map((tag, i) => (
                   <div key={i} className="flex items-center gap-3 text-foreground font-semibold">
                     <CheckCircle2 size={18} className="text-eco-green flex-shrink-0" />
                     <span className="text-sm md:text-base">{tag}</span>
@@ -136,10 +136,10 @@ const ServiceDetailPage = ({ lang, setLang }: ServiceDetailPageProps) => {
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4 text-vc-black dark:text-white">
-              {lang === "vi" ? "Vì sao nên chọn VC GROUP?" : lang === "jp" ? "VC GROUPが選ばれる理由" : "Why choose VC GROUP?"}
+              {t(translations.serviceDetail.whyChooseTitle, lang)}
             </h2>
             <div className="w-20 h-1.5 bg-primary mx-auto rounded-full mb-6"></div>
-            <p className="text-muted-foreground text-lg">{lang === "vi" ? "Cam kết chất lượng chuẩn Nhật Bản trong từng dịch vụ" : lang === "jp" ? "すべてのサービスに日本品質のこだわりを" : "Commitment to Japanese quality in every service"}</p>
+            <p className="text-muted-foreground text-lg">{t(translations.serviceDetail.whyChooseDesc, lang)}</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {usps.map((usp, i) => {
@@ -172,10 +172,10 @@ const ServiceDetailPage = ({ lang, setLang }: ServiceDetailPageProps) => {
             <div className="max-w-4xl mx-auto text-center">
               <div className="inline-flex items-center gap-2 mb-6 text-primary font-bold">
                   <PlayCircle size={24} />
-                  <span className="uppercase tracking-[0.2em] text-xs font-black">{lang === "vi" ? "Quy trình thực tế" : lang === "jp" ? "実際の作業風景" : "Process Video"}</span>
+                  <span className="uppercase tracking-[0.2em] text-xs font-black">{t(translations.serviceDetail.videoLabel, lang)}</span>
               </div>
               <h2 className="text-3xl md:text-5xl font-heading font-bold mb-12 text-vc-black dark:text-white leading-tight">
-                 {lang === "vi" ? "Cùng theo dõi video giới thiệu" : lang === "jp" ? "紹介ビデオをご覧ください" : "Watch our introduction video"}
+                 {t(translations.serviceDetail.videoTitle, lang)}
               </h2>
               <motion.div
                 initial={{ opacity: 0, scale: 0.98 }}
@@ -201,7 +201,7 @@ const ServiceDetailPage = ({ lang, setLang }: ServiceDetailPageProps) => {
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
-              {lang === "vi" ? "Dự án chúng tôi đã hoàn thành" : lang === "jp" ? "施工事例・実績" : "Completed Projects"}
+              {t(translations.serviceDetail.completedProjects, lang)}
             </h2>
             <div className="w-20 h-1.5 bg-primary mx-auto rounded-full"></div>
           </div>
@@ -237,7 +237,7 @@ const ServiceDetailPage = ({ lang, setLang }: ServiceDetailPageProps) => {
                     />
                     <div className="absolute inset-0 bg-vc-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                       <div className="bg-white/90 text-vc-black px-4 py-2 rounded-full text-xs font-bold transform translate-y-4 group-hover:translate-y-0 transition-transform">
-                        {lang === "vi" ? "Xem chi tiết" : "View Details"}
+                        {t(translations.common.viewDetails, lang)}
                       </div>
                     </div>
                   </div>
@@ -267,22 +267,14 @@ const ServiceDetailPage = ({ lang, setLang }: ServiceDetailPageProps) => {
             className="space-y-10"
           >
             <h2 className="text-3xl md:text-6xl font-heading font-bold leading-[1.1] text-vc-black dark:text-white">
-              {lang === "vi" 
-                ? "Bắt đầu giải quyết nhanh chóng!" 
-                : lang === "jp" 
-                ? "今すぐ解決しませんか？" 
-                : "Get it resolved today!"}
+              {t(translations.serviceDetail.ctaTitle, lang)}
             </h2>
             <p className="text-xl md:text-2xl text-vc-black/80 dark:text-white/80 max-w-2xl mx-auto font-medium">
-              {lang === "vi" 
-                ? "Liên hệ để nhận báo giá miễn phí ngay trong 30 phút." 
-                : lang === "jp" 
-                ? "30分以内にお届けする無料見積もりを受付中です。" 
-                : "Contact us for a free quote within 30 minutes."}
+              {t(translations.serviceDetail.ctaDesc, lang)}
             </p>
             <div className="pt-4">
               <a href="/contact" className="px-12 py-6 bg-white dark:bg-vc-black text-primary dark:text-white font-black rounded-full text-xl hover:bg-vc-yellow hover:text-vc-black transition-all shadow-[0_15px_35px_rgba(0,0,0,0.1)] inline-block uppercase tracking-widest">
-                 {lang === "vi" ? "Liên hệ ngay" : lang === "jp" ? "問い合わせる" : "Contact Now"}
+                 {t(translations.common.contactNow, lang)}
               </a>
             </div>
           </motion.div>

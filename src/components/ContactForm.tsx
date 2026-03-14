@@ -54,7 +54,7 @@ const ContactForm = ({ lang }: ContactFormProps) => {
       address: formData.get("address") as string,
       product: selectedServices.length > 0 
         ? selectedServices.map(s => services.find(svc => svc.key === s)?.[lang] || s).join(", ")
-        : (lang === "vi" ? "Liên hệ chung" : "General Inquiry"),
+        : (lang === "vi" ? "Liên hệ chung" : lang === "jp" ? "一般お問い合わせ" : "General Inquiry"),
       note: formData.get("note") as string,
       date: new Date().toLocaleString(),
       status: "new",
@@ -65,7 +65,7 @@ const ContactForm = ({ lang }: ContactFormProps) => {
     const existingLeads = JSON.parse(localStorage.getItem("vc_leads") || "[]");
     localStorage.setItem("vc_leads", JSON.stringify([newLead, ...existingLeads]));
 
-    toast.success(lang === "jp" ? "送信しました" : lang === "vi" ? "Đã gửi thành công" : "Message sent!");
+    toast.success(t(c.success, lang));
     
     // Reset form
     (e.target as HTMLFormElement).reset();
@@ -89,7 +89,7 @@ const ContactForm = ({ lang }: ContactFormProps) => {
           { name: "email", label: t(c.email, lang), type: "email", span: true },
           {
             name: "address",
-            label: lang === "jp" ? "ご住所" : lang === "vi" ? "Địa chỉ" : "Address",
+            label: t(c.address, lang),
             type: "text",
             span: true,
           },
@@ -97,6 +97,7 @@ const ContactForm = ({ lang }: ContactFormProps) => {
           <div key={field.name} className={field.span ? "md:col-span-2" : ""}>
             <label className="block text-sm font-body font-medium text-foreground mb-1.5">{field.label}</label>
             <input
+              name={field.name}
               type={field.type}
               required
               className="w-full px-4 py-3 rounded-lg border border-input bg-background font-body text-foreground focus:ring-2 focus:ring-ring outline-none transition-all"
@@ -137,7 +138,7 @@ const ContactForm = ({ lang }: ContactFormProps) => {
       {/* Message */}
       <div>
         <label className="block text-sm font-body font-medium text-foreground mb-1.5">
-          {lang === "jp" ? "ご連絡内容" : lang === "vi" ? "Nội dung yêu cầu" : "Message"}
+          {t(c.message, lang)}
         </label>
         <textarea
           name="note"
@@ -149,12 +150,12 @@ const ContactForm = ({ lang }: ContactFormProps) => {
       {/* Image upload */}
       <div>
         <label className="block text-sm font-body font-medium text-foreground mb-1.5">
-          {lang === "jp" ? "画像添付（最大5枚）" : lang === "vi" ? "Đính kèm ảnh (tối đa 5 ảnh)" : "Attach photos (max 5)"}
+          {t(c.attachment, lang)}
         </label>
         <label className="flex flex-col items-center justify-center gap-2 w-full py-5 rounded-lg border-2 border-dashed border-primary/40 bg-primary/5 cursor-pointer hover:bg-primary/10 transition-all">
           <Upload className="text-primary" size={26} />
           <span className="text-sm font-body text-muted-foreground">
-            {lang === "jp" ? "クリックして画像を選択" : lang === "vi" ? "Nhấp để chọn ảnh" : "Click to select photos"}
+            {t(c.clickToSelect, lang)}
           </span>
           <input type="file" accept="image/*" multiple className="hidden" onChange={handleImageChange} />
         </label>

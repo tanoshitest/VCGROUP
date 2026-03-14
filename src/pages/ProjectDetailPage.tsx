@@ -1,4 +1,5 @@
 import { useParams, Link } from "react-router-dom";
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Language, translations, t } from "@/lib/i18n";
 import Header from "@/components/Header";
@@ -53,8 +54,12 @@ const ProjectDetailPage = ({ lang, setLang }: ProjectDetailPageProps) => {
   const projectIndex = translations.projects.items.findIndex((item) => item.id === id);
   const project = translations.projects.items[projectIndex];
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id]);
+
   if (!project) {
-    return <div>Project not found</div>;
+    return <div className="min-h-screen flex items-center justify-center font-body">{t(translations.common.notFound, lang)}</div>;
   }
 
   const beforeImages: Record<string, string> = {
@@ -96,7 +101,7 @@ const ProjectDetailPage = ({ lang, setLang }: ProjectDetailPageProps) => {
             className="inline-flex items-center text-sm font-body text-primary hover:underline mb-8"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
-            {lang === "vi" ? "Quay lại dự án" : lang === "jp" ? "プロジェクト一覧へ" : "Back to projects"}
+            {t(translations.common.backToProjects, lang)}
           </Link>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -107,11 +112,7 @@ const ProjectDetailPage = ({ lang, setLang }: ProjectDetailPageProps) => {
                 {t(project.title, lang)}
               </h1>
               <p className="text-lg text-muted-foreground font-body leading-relaxed mb-8">
-                {lang === "vi" 
-                  ? "Dưới đây là chi tiết quá trình chúng tôi thực hiện dự án này, từ khâu khảo sát đến khi hoàn tất bàn giao cho khách hàng."
-                  : lang === "jp"
-                  ? "現地調査から完了・引き渡しまでの詳細なプロセスをご紹介します。"
-                  : "Explore the detailed process of this project, from initial survey to final handover."}
+                {t(translations.projectDetail.processText, lang)}
               </p>
               <div className="flex flex-wrap gap-4">
                 <span className="px-4 py-2 bg-eco-green text-white rounded-full text-sm font-body">
@@ -141,7 +142,7 @@ const ProjectDetailPage = ({ lang, setLang }: ProjectDetailPageProps) => {
       <section className="section-padding border-b border-border">
         <div className="container mx-auto">
           <h2 className="text-3xl font-heading font-bold text-center mb-16 underline decoration-primary decoration-4 underline-offset-8">
-            {lang === "vi" ? "Trước & Sau khi thực hiện" : lang === "jp" ? "ビフォー・アフター" : "Before & After"}
+            {t(translations.projectDetail.beforeAfterTitle, lang)}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="space-y-4">
@@ -154,7 +155,7 @@ const ProjectDetailPage = ({ lang, setLang }: ProjectDetailPageProps) => {
                 )}
               </div>
               <p className="text-sm font-body italic text-muted-foreground">
-                * {lang === "vi" ? "Hiện trạng thực tế khi khảo sát" : "Original condition during survey"}
+                * {t(translations.projectDetail.originalCondition, lang)}
               </p>
             </div>
             <div className="space-y-4">
@@ -176,7 +177,7 @@ const ProjectDetailPage = ({ lang, setLang }: ProjectDetailPageProps) => {
            <div className="bg-primary/5 p-8 md:p-14 lg:pr-80 rounded-[32px] md:rounded-[48px] relative border border-primary/10">
               <div className="relative z-10 lg:max-w-3xl">
                 <h3 className="text-2xl md:text-3xl font-heading font-bold text-primary mb-6">
-                  {lang === "vi" ? "Câu chuyện đằng sau dự án" : lang === "jp" ? "プロジェクトの裏話" : "Project Story"}
+                  {t(translations.projectDetail.storyTitle, lang)}
                 </h3>
                 <p className="text-lg font-body text-foreground/80 leading-relaxed">
                   {t(project.reuseStory, lang)}
@@ -194,12 +195,10 @@ const ProjectDetailPage = ({ lang, setLang }: ProjectDetailPageProps) => {
       <section className="py-20 overflow-hidden bg-background">
         <div className="container mx-auto px-4 mb-12 text-center">
           <h2 className="text-3xl font-heading font-bold mb-4">
-             {lang === "vi" ? "Nhật ký làm việc" : lang === "jp" ? "作業の様子" : "Company Work Diary"}
+             {t(translations.projectDetail.diaryTitle, lang)}
           </h2>
           <p className="text-muted-foreground font-body">
-            {lang === "vi" 
-              ? "Một số hình ảnh thực tế từ các dự án của đội ngũ VC GROUP." 
-              : "Glimpses behind the scenes as our team completes various projects."}
+            {t(translations.projectDetail.diaryDesc, lang)}
           </p>
         </div>
         
@@ -223,22 +222,22 @@ const ProjectDetailPage = ({ lang, setLang }: ProjectDetailPageProps) => {
         <div className="container mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-heading font-bold mb-4">
-               {lang === "vi" ? "Cam kết chất lượng Nhật Bản" : "Japanese Standard Commitment"}
+               {t(translations.projectDetail.trustTitle, lang)}
             </h2>
             <p className="text-muted-foreground font-body">
-              {lang === "vi" ? "Niềm tin của khách hàng là ưu tiên hàng đầu của chúng tôi." : "Building trust through professional service."}
+              {t(translations.projectDetail.trustDesc, lang)}
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {renderTrustBadge(trustStaff, lang === "vi" ? "Đội ngũ chuyên nghiệp" : "Professional Staff", "Thân thiện, nhiệt tình, có trách nhiệm cao. Đội ngũ nhân viên giàu kinh nghiệm luôn đặt sự hài lòng của khách hàng lên hàng đầu.")}
-            {renderTrustBadge(trustTruck, lang === "vi" ? "Xe tải hiện đại" : "Modern Fleet", "Vận hành êm ái, đảm bảo an toàn hàng hóa. Đội xe đa dạng kích cỡ phù hợp cho mọi nhu cầu vận chuyển lớn nhỏ.")}
-            {renderTrustBadge(trustTime, lang === "vi" ? "Đúng tiến độ" : "On Time", "Luôn hoàn thành công việc theo lịch hẹn. Chúng tôi tuân thủ nghiêm ngặt thời gian và tối ưu hóa quy trình để xử lý nhanh chóng.")}
-            {renderTrustBadge(trustEco, lang === "vi" ? "Thân thiện môi trường" : "Eco Friendly", "Tối đa hóa tái sử dụng, giảm thiểu rác thải. Chúng tôi phân loại nghiêm ngặt và hợp tác các trạm tái chế đúng quy định pháp luật.")}
+            {renderTrustBadge(trustStaff, t(translations.projectDetail.trustBadges.staff.title, lang), t(translations.projectDetail.trustBadges.staff.desc, lang))}
+            {renderTrustBadge(trustTruck, t(translations.projectDetail.trustBadges.truck.title, lang), t(translations.projectDetail.trustBadges.truck.desc, lang))}
+            {renderTrustBadge(trustTime, t(translations.projectDetail.trustBadges.time.title, lang), t(translations.projectDetail.trustBadges.time.desc, lang))}
+            {renderTrustBadge(trustEco, t(translations.projectDetail.trustBadges.eco.title, lang), t(translations.projectDetail.trustBadges.eco.desc, lang))}
           </div>
         </div>
       </section>
 
-      <Footer />
+      <Footer lang={lang} />
     </div>
   );
 };

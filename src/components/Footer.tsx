@@ -1,5 +1,5 @@
 import { Phone, Mail, MapPin, Clock, Globe, Facebook, MessageCircle } from "lucide-react";
-import { Language, translations } from "@/lib/i18n";
+import { Language, translations, t } from "@/lib/i18n";
 
 interface FooterProps {
   lang: Language;
@@ -18,7 +18,7 @@ const Footer = ({ lang }: FooterProps) => {
               {c.name}
             </h3>
             <p className="text-sm font-body text-foreground font-medium mb-4">
-               Công ty {c.name}
+               {lang === "vi" ? `Công ty ${c.name}` : c.name}
             </p>
             <div className="space-y-3 text-sm font-body text-muted-foreground mt-4 shrink-0">
               <div className="flex items-start gap-3">
@@ -27,11 +27,11 @@ const Footer = ({ lang }: FooterProps) => {
               </div>
               <div className="flex items-start gap-3">
                 <Clock size={18} className="mt-0.5 shrink-0" />
-                <span className="leading-relaxed">Giờ làm việc: 9:00~18:00 (cả tuần)</span>
+                <span className="leading-relaxed">{t(c.openingHours.label, lang)}: {t(c.openingHours.value, lang)}</span>
               </div>
               <div className="flex items-start gap-3">
                 <Globe size={18} className="mt-0.5 shrink-0" />
-                <span className="leading-relaxed">Khu vực phục vụ: Saitama & Tokyo</span>
+                <span className="leading-relaxed">{t(c.serviceArea.label, lang)}: {c.serviceArea.value}</span>
               </div>
             </div>
           </div>
@@ -39,7 +39,7 @@ const Footer = ({ lang }: FooterProps) => {
           {/* Column 2: Contact & Social Media */}
           <div className="space-y-4">
             <h3 className="text-base font-heading font-bold text-foreground uppercase tracking-wide">
-              Liên hệ
+              {t(c.contact, lang)}
             </h3>
             <div className="space-y-3 text-sm font-body text-muted-foreground mb-8">
               <div className="flex items-center gap-3">
@@ -53,7 +53,7 @@ const Footer = ({ lang }: FooterProps) => {
             </div>
             
             <h3 className="text-base font-heading font-bold text-foreground uppercase tracking-wide pt-2">
-              Mạng xã hội
+              {t(c.social, lang)}
             </h3>
             <div className="flex items-center gap-3 pt-1">
               <a href="#" className="w-10 h-10 rounded-full bg-[#1877F2] text-white flex items-center justify-center hover:bg-blue-700 transition-colors shadow-sm">
@@ -68,18 +68,18 @@ const Footer = ({ lang }: FooterProps) => {
           {/* Column 3: Company Info Details */}
           <div className="space-y-4">
             <h3 className="text-base font-heading font-bold text-foreground uppercase tracking-wide">
-              Thông tin công ty
+              {t(c.title, lang)}
             </h3>
             <div className="space-y-2 text-sm font-body text-muted-foreground">
-               <p className="mt-3">Thành lập: {c.established.value}</p>
-               <p className="mt-1">Vốn điều lệ: {c.capital.value}</p>
+               <p className="mt-3">{t(c.established.label, lang)}: {c.established.value}</p>
+               <p className="mt-1">{t(c.capital.label, lang)}: {c.capital.value}</p>
             </div>
           </div>
         </div>
         
         {/* Copyright */}
         <div className="border-t border-border/80 pt-6 mt-4 text-center text-xs font-body text-muted-foreground/80">
-          © 2025 VC GROUP 株式会社. Prototype owned by Tanoshi Vietnam
+          {translations.footer.rights}
         </div>
       </div>
     </footer>

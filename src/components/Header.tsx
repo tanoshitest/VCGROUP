@@ -20,9 +20,9 @@ const Header = ({ lang, setLang }: HeaderProps) => {
 
   const links = [
     { href: "/", label: t(nav.home, lang) },
+    { href: "/about", label: t(nav.about, lang) },
     { href: "/services", label: t(nav.services, lang) },
     { href: "/reuse-catalog", label: t(nav.reuseCatalog, lang) },
-    { href: "/about", label: t(nav.about, lang) },
     { href: "/projects", label: t(nav.projects, lang) },
     { href: "/blog", label: t(nav.blog, lang) },
     { href: "/contact", label: t(nav.contact, lang) },

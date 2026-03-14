@@ -59,7 +59,7 @@ const App = () => {
               <Route path="settings" element={<AdminSettings />} />
             </Route>
             
-            <Route path="*" element={<NotFound />} />
+            <Route path="*" element={<NotFound lang={lang} />} />
           </Routes>
         </BrowserRouter>
       </TooltipProvider>

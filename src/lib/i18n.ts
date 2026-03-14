@@ -10,6 +10,14 @@ export const translations = {
     blog: { jp: "ブログ", vi: "Blog", en: "Blog" },
     reuseCatalog: { jp: "中古品カタログ", vi: "Bán đồ cũ", en: "Reuse Catalog" },
   },
+  common: {
+    backToList: { jp: "一覧に戻る", vi: "Quay lại danh sách", en: "Back to list" },
+    backToProjects: { jp: "プロジェクト一覧へ", vi: "Quay lại dự án", en: "Back to projects" },
+    backToServices: { jp: "サービス一覧に戻る", vi: "Quay lại danh sách dịch vụ", en: "Back to services" },
+    viewDetails: { jp: "詳細を見る", vi: "Xem chi tiết", en: "View details" },
+    contactNow: { jp: "今すぐ問い合わせる", vi: "Liên hệ ngay", en: "Contact now" },
+    notFound: { jp: "見つかりませんでした", vi: "Không tìm thấy", en: "Not found" },
+  },
   hero: {
     headline: {
       jp: "まだ使えるものを大切に\n不用品回収・リユース・環境に優しいサービス",
@@ -243,6 +251,14 @@ export const translations = {
       en: "Thank you for visiting the VC GROUP website. We sincerely appreciate all customers who use our services. VC GROUP provides junk removal, appliance and furniture reuse support, and other services to reduce our customers' burden as much as possible. Under our philosophy of \"Cherishing what can still be used,\" we are committed to contributing to the local community while caring for the environment.",
     },
   },
+  team: {
+    title: { jp: "私たちのチーム", vi: "Đội ngũ của chúng tôi", en: "Our Team" },
+    text: { 
+      vi: "Đội ngũ VC GROUP tập hợp những cộng sự tận tâm, chuyên nghiệp từ Nhật Bản và Việt Nam. Chúng tôi làm việc với tinh thần trách nhiệm cao nhất để mang lại sự an tâm tuyệt đối và giá trị bền vững cho từng khách hàng.",
+      jp: "VC GROUPのチームは、日本とベトナムの献身的でプロフェッショナルなメンバーで構成されています。一人ひとりのお客様に絶対的な安心と持続可能な価値をお届けするため、最高の責任感を持って取り組んでいます。",
+      en: "The VC GROUP team brings together dedicated and professional associates from Japan and Vietnam. We work with the highest sense of responsibility to provide absolute peace of mind and sustainable value to each customer."
+    }
+  },
   projects: {
     title: { jp: "施工事例", vi: "Dự Án của chúng tôi", en: "Our Projects" },
     viewMore: { jp: "もっと見る", vi: "Xem thêm", en: "View More" },
@@ -375,8 +391,18 @@ export const translations = {
       label: { jp: "倉庫所在地", vi: "Địa chỉ kho", en: "Warehouse Address" },
       value: "〒270-0229 千葉県野田市なみき 4-31-11",
     },
+    openingHours: {
+      label: { jp: "営業時間", vi: "Giờ làm việc", en: "Opening Hours" },
+      value: { jp: "9:00〜18:00（年中無休）", vi: "9:00~18:00 (cả tuần)", en: "9:00-18:00 (Daily)" }
+    },
+    serviceArea: {
+      label: { jp: "対応エリア", vi: "Khu vực phục vụ", en: "Service Area" },
+      value: "Saitama & Tokyo"
+    },
     phone: { label: { jp: "電話番号", vi: "Điện thoại", en: "Phone" }, value: "048-919-2962" },
     email: { label: { jp: "メール", vi: "Email", en: "Email" }, value: "info@vcgroup.jp" },
+    social: { jp: "SNS・メッセージ", vi: "Mạng xã hội", en: "Social Media" },
+    contact: { jp: "お問い合わせ", vi: "Liên hệ", en: "Contact" },
     business: {
       label: { jp: "事業内容", vi: "Lĩnh vực kinh doanh", en: "Business Activities" },
       value: { 
@@ -387,7 +413,72 @@ export const translations = {
     },
     licenses: {
       label: { jp: "許可", vi: "Giấy phép", en: "Licenses" },
-      value: "古物商許可 第 431270053223 号\n自家用自動車有償貸渡業の許可 交付番号第 1007 号"
+      value: "古物商許可 第 431270053223 号\n自家用自動車有償貸渡業 của許可 交付番号第 1007 号"
+    }
+  },
+  about: {
+    description: {
+      jp: "VC GROUPの理念と会社概要をご紹介します。",
+      vi: "Giới thiệu về triết lý và tổng quan công ty VC GROUP.",
+      en: "Learn about VC GROUP's philosophy and company overview."
+    },
+    philosophyTitle: { jp: "私たちの理念", vi: "Triết lý của chúng tôi", en: "Our Philosophy" }
+  },
+  projectDetail: {
+    processText: {
+      jp: "現地調査から完了・引き渡しまでの詳細なプロセスをご紹介します。",
+      vi: "Dưới đây là chi tiết quá trình chúng tôi thực hiện dự án này, từ khâu khảo sát đến khi hoàn tất bàn giao cho khách hàng.",
+      en: "Explore the detailed process of this project, from initial survey to final handover."
+    },
+    beforeAfterTitle: { jp: "ビフォー・アフター", vi: "Trước & Sau khi thực hiện", en: "Before & After" },
+    originalCondition: { jp: "現地調査時の現状", vi: "Hiện trạng thực tế khi khảo sát", en: "Original condition during survey" },
+    storyTitle: { jp: "プロジェクトの裏話", vi: "Câu chuyện đằng sau dự án", en: "Project Story" },
+    diaryTitle: { jp: "作業の様子", vi: "Nhật ký làm việc", en: "Work Diary" },
+    diaryDesc: { 
+      jp: "VC GROUPチームが様々なプロジェクトを完了させる舞台裏をご覧ください。", 
+      vi: "Một số hình ảnh thực tế từ các dự án của đội ngũ VC GROUP.", 
+      en: "Glimpses behind the scenes as our team completes various projects." 
+    },
+    trustTitle: { jp: "日本品質の約束", vi: "Cam kết chất lượng Nhật Bản", en: "Japanese Standard Commitment" },
+    trustDesc: { jp: "プロフェッショナルなサービスを通じて信頼を築きます。", vi: "Niềm tin của khách hàng là ưu tiên hàng đầu của chúng tôi.", en: "Building trust through professional service." },
+    trustBadges: {
+      staff: { title: { jp: "プロフェッショナルなスタッフ", vi: "Đội ngũ chuyên nghiệp", en: "Professional Staff" }, desc: { jp: "経験豊富なスタッフが、お客様の満足を第一に考え、丁寧かつ責任を持って対応します。", vi: "Thân thiện, nhiệt tình, có trách nhiệm cao. Đội ngũ nhân viên giàu kinh nghiệm luôn đặt sự hài lòng của khách hàng lên hàng đầu.", en: "Friendly, enthusiastic, and highly responsible. Our experienced team always puts customer satisfaction first." } },
+      truck: { title: { jp: "最新の車両", vi: "Xe tải hiện đại", en: "Modern Fleet" }, desc: { jp: "静かで安全な運搬を実現。あらゆるニーズに対応できるよう、様々なサイズの車両を取り揃えています。", vi: "Vận hành êm ái, đảm bảo an toàn hàng hóa. Đội xe đa dạng kích cỡ phù hợp cho mọi nhu cầu vận chuyển lớn nhỏ.", en: "Smooth operation, ensuring cargo safety. A diverse fleet of sizes suitable for all large and small transport needs." } },
+      time: { title: { jp: "納期厳守", vi: "Đúng tiến độ", en: "On Time" }, desc: { jp: "お約束の時間を厳守し、効率的なプロセスで迅速に作業を完了させます。", vi: "Luôn hoàn thành công việc theo lịch hẹn. Chúng tôi tuân thủ nghiêm ngặt thời gian và tối ưu hóa quy trình để xử lý nhanh chóng.", en: "Always complete work according to appointments. We strictly adhere to time and optimize processes for quick handling." } },
+      eco: { title: { jp: "環境への配慮", vi: "Thân thiện môi trường", en: "Eco Friendly" }, desc: { jp: "リユースを最大化し、廃棄物を最小限に抑制。厳格な分別と法令を遵守したリサイクルを行っています。", vi: "Tối đa hóa tái sử dụng, giảm thiểu rác thải. Chúng tôi phân loại nghiêm ngặt và hợp tác các trạm tái chế đúng quy định pháp luật.", en: "Maximize reuse, minimize waste. We strictly sort and cooperate with recycling stations in accordance with legal regulations." } }
+    }
+  },
+  serviceDetail: {
+    overviewTitle: { jp: "ソリューション概要", vi: "Tổng quan giải pháp", en: "Solution Overview" },
+    overviewP1: {
+      jp: "VC GROUPは、不用品処分や技術的な課題に直面した際のお客様の負担を深く理解しています。情報の受付から現地調査、そして実際の作業まで、一貫したトータルソリューションを提供します。",
+      vi: "VC GROUP thấu hiểu những khó khăn của khách hàng khi đối mặt với rác thải hay các vấn đề kỹ thuật tại nhà. Chúng tôi mang đến hệ thống giải pháp toàn diện, từ khâu tiếp nhận thông tin, khảo sát hiện trường đến triển khai thực tế.",
+      en: "VC GROUP understands the challenges customers face with waste or technical issues at home. We provide a comprehensive system of solutions, from information intake and site survey to actual implementation."
+    },
+    overviewP2: {
+      jp: "すべての工程において、日本品質の基準を最優先にしており、お客様に絶対的な安心をお届けします。",
+      vi: "Tiêu chuẩn Nhật Bản luôn được đặt lên hàng đầu trong mỗi bước thực hiện, đảm bảo sự an tâm tuyệt đối cho quý khách hàng.",
+      en: "Japanese standards are prioritized in every step, ensuring absolute peace of mind for our customers."
+    },
+    tags: {
+      trust: { jp: "卓越した信頼", vi: "Uy tín vượt trội", en: "Superior Trust" },
+      support: { jp: "誠実なサポート", vi: "Tận tâm hỗ trợ", en: "Dedicated Support" },
+      price: { jp: "透明な価格設定", vi: "Giá cả minh bạch", en: "Transparent Pricing" },
+      quality: { jp: "日本品質の施工", vi: "Chất lượng chuẩn Nhật", en: "Japanese Standard" }
+    },
+    whyChooseTitle: { jp: "VC GROUPが選ばれる理由", vi: "Vì sao nên chọn VC GROUP?", en: "Why choose VC GROUP?" },
+    whyChooseDesc: { jp: "すべてのサービスに日本品質のこだわりを", vi: "Cam kết chất lượng chuẩn Nhật Bản trong từng dịch vụ", en: "Commitment to Japanese quality in every service" },
+    videoLabel: { jp: "実際の作業風景", vi: "Quy trình thực tế", en: "Process Video" },
+    videoTitle: { jp: "紹介ビデオをご覧ください", vi: "Cùng theo dõi video giới thiệu", en: "Watch our introduction video" },
+    completedProjects: { jp: "施工事例・実績", vi: "Dự án chúng tôi đã hoàn thành", en: "Completed Projects" },
+    ctaTitle: { jp: "今すぐ解決しませんか？", vi: "Bắt đầu giải quyết nhanh chóng!", en: "Get it resolved today!" },
+    ctaDesc: { jp: "30分以内にお届けする無料見積もりを受付中です。", vi: "Liên hệ để nhận báo giá miễn phí ngay trong 30 phút.", en: "Contact us for a free quote within 30 minutes." }
+  },
+  blogDetail: {
+    journeyText: {
+      jp: "私たちは、片付けやリユースにおける小さな一歩が、緑豊かな地球を守るための大きな貢献になると信じています。この意義深い旅に、ぜひVC GROUPと共に歩んでください。",
+      vi: "Chúng tôi tin rằng mỗi bước nhỏ trong việc dọn dẹp và tái sử dụng đều đóng góp to lớn vào việc bảo vệ hành tinh xanh. Hãy đồng hành cùng VC GROUP trong hành trình ý nghĩa này.",
+      en: "We believe that every small step in cleaning and reusing contributes greatly to protecting our green planet. Join VC GROUP on this meaningful journey."
     }
   },
   contact: {
@@ -395,16 +486,21 @@ export const translations = {
     name: { jp: "お名前", vi: "Họ tên", en: "Name" },
     phone: { jp: "電話番号", vi: "Số điện thoại", en: "Phone" },
     email: { jp: "メールアドレス", vi: "Email", en: "Email" },
+    address: { jp: "ご住所", vi: "Địa chỉ", en: "Address" },
     service: { jp: "ご依頼内容", vi: "Nội dung yêu cầu", en: "Service Request" },
+    message: { jp: "ご連絡内容", vi: "Nội dung tin nhắn", en: "Message" },
+    attachment: { jp: "画像添付（最大5枚）", vi: "Đính kèm ảnh (tối đa 5 ảnh)", en: "Attach photos (max 5)" },
+    clickToSelect: { jp: "クリックして画像を選択", vi: "Nhấp để chọn ảnh", en: "Click to select photos" },
     privacy: {
       jp: "個人情報保護方針に同意します",
       vi: "Tôi đồng ý với chính sách bảo mật thông tin",
       en: "I agree to the Privacy Policy",
     },
     submit: { jp: "送信する", vi: "Gửi", en: "Submit" },
+    success: { jp: "送信しました", vi: "Đã gửi thành công", en: "Message sent!" }
   },
   footer: {
-    rights: "© 2025 VC GROUP 株式会社. All rights reserved.",
+    rights: "© 2025 VC GROUP 株式会社. Prototype owned by Tanoshi Vietnam",
   },
 };
 

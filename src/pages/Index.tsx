@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import CeoGreeting from "@/components/CeoGreeting";
+import Team from "@/components/Team";
 import Projects from "@/components/Projects";
 import WhyUs from "@/components/WhyUs";
 import Process from "@/components/Process";
@@ -20,6 +21,7 @@ const Index = ({ lang, setLang }: IndexProps) => {
       <Header lang={lang} setLang={setLang} />
       <Hero lang={lang} />
       <CeoGreeting lang={lang} />
+      <Team lang={lang} />
       <Services lang={lang} />
       <Projects lang={lang} />
       <WhyUs lang={lang} />
@@ -29,7 +31,7 @@ const Index = ({ lang, setLang }: IndexProps) => {
           <ContactForm lang={lang} />
         </div>
       </section>
-      <Footer />
+      <Footer lang={lang} />
     </div>
   );
 };

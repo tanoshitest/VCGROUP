@@ -64,11 +64,7 @@ const AboutPage = ({ lang, setLang }: AboutPageProps) => {
             transition={{ delay: 0.2 }}
             className="text-muted-foreground font-body max-w-2xl mx-auto"
           >
-            {lang === "jp"
-              ? "VC GROUPの理念と会社概要をご紹介します。"
-              : lang === "vi"
-              ? "Giới thiệu về triết lý và tổng quan công ty VC GROUP."
-              : "Learn about VC GROUP's philosophy and company overview."}
+            {t(translations.about.description, lang)}
           </motion.p>
         </div>
       </section>
@@ -81,7 +77,7 @@ const AboutPage = ({ lang, setLang }: AboutPageProps) => {
             viewport={{ once: true }}
             className="text-3xl md:text-4xl font-heading font-bold text-center mb-12 text-foreground"
           >
-            {lang === "jp" ? "私たちの理念" : lang === "vi" ? "Triết lý của chúng tôi" : "Our Philosophy"}
+            {t(translations.about.philosophyTitle, lang)}
           </motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {philosophy.map((item, i) => {
@@ -110,7 +106,7 @@ const AboutPage = ({ lang, setLang }: AboutPageProps) => {
       <CeoGreeting lang={lang} />
       <WhyUs lang={lang} />
       <CompanyInfo lang={lang} />
-      <Footer />
+      <Footer lang={lang} />
     </div>
   );
 };
