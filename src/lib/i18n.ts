@@ -357,7 +357,7 @@ export const translations = {
     steps: [
       { title: { jp: "お問い合わせ", vi: "Liên hệ", en: "Contact Us" } },
       { title: { jp: "お見積り", vi: "Báo giá", en: "Get a Quote" } },
-      { title: { jp: "回収作業", vi: "Thực hiện thu gom", en: "Collection" } },
+      { title: { jp: "回収作業", vi: "Tiến hành công việc", en: "Collection" } },
       { title: { jp: "作業完了・お支払い", vi: "Hoàn thành và thanh toán", en: "Complete & Pay" } },
     ],
   },
