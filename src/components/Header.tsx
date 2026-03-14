@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Globe, ChevronDown } from "lucide-react";
+import { Menu, X, Globe, ChevronDown, UserCircle } from "lucide-react";
 import { Language, translations, t } from "@/lib/i18n";
 
 interface HeaderProps {
@@ -91,6 +91,15 @@ const Header = ({ lang, setLang }: HeaderProps) => {
               )}
             </AnimatePresence>
           </div>
+
+          {/* Login Button */}
+          <button 
+            onClick={() => navigate("/login")}
+            className="p-2 text-foreground/70 hover:text-primary transition-colors flex items-center justify-center"
+            title="Admin Login"
+          >
+            <UserCircle size={24} />
+          </button>
 
           {/* Mobile Toggle */}
           <button onClick={() => setMobileOpen(!mobileOpen)} className="md:hidden text-foreground">

@@ -44,7 +44,33 @@ const ContactForm = ({ lang }: ContactFormProps) => {
       toast.error(t(c.privacy, lang));
       return;
     }
+
+    const formData = new FormData(e.currentTarget);
+    const newLead = {
+      id: Date.now(),
+      name: formData.get("name") as string,
+      phone: formData.get("phone") as string,
+      email: formData.get("email") as string,
+      address: formData.get("address") as string,
+      product: selectedServices.length > 0 
+        ? selectedServices.map(s => services.find(svc => svc.key === s)?.[lang] || s).join(", ")
+        : (lang === "vi" ? "Liên hệ chung" : "General Inquiry"),
+      note: formData.get("note") as string,
+      date: new Date().toLocaleString(),
+      status: "new",
+      source: "Contact Page"
+    };
+
+    // Save to localStorage
+    const existingLeads = JSON.parse(localStorage.getItem("vc_leads") || "[]");
+    localStorage.setItem("vc_leads", JSON.stringify([newLead, ...existingLeads]));
+
     toast.success(lang === "jp" ? "送信しました" : lang === "vi" ? "Đã gửi thành công" : "Message sent!");
+    
+    // Reset form
+    (e.target as HTMLFormElement).reset();
+    setSelectedServices([]);
+    setAgreed(false);
   };
 
   return (
@@ -114,6 +140,7 @@ const ContactForm = ({ lang }: ContactFormProps) => {
           {lang === "jp" ? "ご連絡内容" : lang === "vi" ? "Nội dung yêu cầu" : "Message"}
         </label>
         <textarea
+          name="note"
           rows={4}
           className="w-full px-4 py-3 rounded-lg border border-input bg-background font-body text-foreground focus:ring-2 focus:ring-ring outline-none transition-all resize-none"
         />

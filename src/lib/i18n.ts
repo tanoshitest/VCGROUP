@@ -146,7 +146,7 @@ export const translations = {
           jp: "VC GROUPの不用品回収サービスは、お客様の居住空間を最短で快適にするお手伝いをします。古くなった家電や故障した電子機器、搬出が困難な粗大ごみまで、あらゆる不用品を迅速に処理いたします。",
           en: "VC GROUP's all-inclusive junk removal service helps you clear your living space as quickly as possible. We handle everything from old appliances and broken electronics to large, hard-to-transport waste."
         },
-        image: "https://images.unsplash.com/photo-1581578731522-745d05db9ad0?q=80&w=1200",
+        image: "/assets/junk-removal-service.png",
         video: "https://www.youtube.com/embed/dQw4w9WgXcQ"
       },
       {
@@ -178,7 +178,7 @@ export const translations = {
           jp: "当社の技術者は、様々なメーカーのエアコンに対応する豊かな経験を持っています。安全で確実な技術、 assessments  assessments そして美観にも配慮した施工により、快適な空間づくりをサポートいたします。",
           en: "Our technicians have experience handling various air conditioner brands, ensuring a safe, technically sound, and aesthetically pleasing installation for your home."
         },
-        image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=1200",
+        image: "/assets/ac-installation-service.png",
         video: "https://www.youtube.com/embed/dQw4w9WgXcQ"
       },
       {
@@ -194,7 +194,7 @@ export const translations = {
           jp: "VC GROUPは企業様向けに産業廃棄物の運搬ソリューションを提供しています。環境規制を完全に遵守し、法令に則った適正な廃棄物処理を徹底いたします。",
           en: "VC GROUP provides industrial waste transport solutions for businesses, committing to full compliance with environmental regulations and lawful waste processing."
         },
-        image: "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?q=80&w=1200",
+        image: "/assets/industrial-waste-service.png",
         video: "https://www.youtube.com/embed/dQw4w9WgXcQ"
       },
     ],
@@ -207,30 +207,30 @@ export const translations = {
         { id: "others", jp: "その他", vi: "Đồ dùng khác", en: "Others" }
       ],
       products: [
-        { id: 1, category: "appliances", price: "￥5,000", title: { vi: "Tủ lạnh mini Panasonic", jp: "パナソニック製ミニ冷蔵庫", en: "Panasonic Mini Fridge" }, image: "https://images.unsplash.com/photo-1584622781564-1d9876a13d00?q=80&w=400&fit=crop" },
-        { id: 2, category: "appliances", price: "￥3,000", title: { vi: "Lò vi sóng Sharp", jp: "シャープ製電子レンジ", en: "Sharp Microwave" }, image: "https://images.unsplash.com/photo-1574362848149-11496d93a7c7?q=80&w=400&fit=crop" },
-        { id: 3, category: "appliances", price: "￥8,000", title: { vi: "Máy giặt Toshiba 6kg", jp: "東芝製洗濯機 6kg", en: "Toshiba Washing Machine 6kg" }, image: "https://images.unsplash.com/photo-1626806787461-102c1bfa71e5?q=80&w=400&fit=crop" },
-        { id: 4, category: "appliances", price: "￥2,000", title: { vi: "Ấm đun nước Tiger", jp: "タイガー製電気ケトル", en: "Tiger Electric Kettle" }, image: "https://images.unsplash.com/photo-1594212699903-ee8a6664329a?q=80&w=400&fit=crop" },
+        { id: 1, category: "appliances", price: "￥5,000", title: { vi: "Tủ lạnh mini Panasonic", jp: "パナソニック製ミニ冷蔵庫", en: "Panasonic Mini Fridge" }, image: "https://images.unsplash.com/photo-1584622781564-1d9876a13d00?q=80&w=400&fit=crop", condition: { vi: "Đã qua sử dụng - Hoạt động tốt", jp: "中古品 - 動作良好", en: "Used - Good Condition" }, warranty: { vi: "Bảo hành 1 tháng", jp: "1ヶ月保証", en: "1 Month Warranty" } },
+        { id: 2, category: "appliances", price: "￥3,000", title: { vi: "Lò vi sóng Sharp", jp: "シャープ製電子レンジ", en: "Sharp Microwave" }, image: "https://images.unsplash.com/photo-1574362848149-11496d93a7c7?q=80&w=400&fit=crop", condition: { vi: "Qua sử dụng - Còn mới 90%", jp: "中古品 - 美品", en: "Used - Like New" }, warranty: { vi: "Bảo hành 1 tuần", jp: "1週間保証", en: "1 Week Warranty" } },
+        { id: 3, category: "appliances", price: "￥8,000", title: { vi: "Máy giặt Toshiba 6kg", jp: "東芝製洗濯機 6kg", en: "Toshiba Washing Machine 6kg" }, image: "https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?q=80&w=400&fit=crop", condition: { vi: "Qua sử dụng - Đã vệ sinh sạch sẽ", jp: "中古品 - クリーニング済み", en: "Used - Cleaned" }, warranty: { vi: "Bảo hành 3 tháng", jp: "3ヶ月保証", en: "3 Months Warranty" } },
+        { id: 4, category: "appliances", price: "￥2,000", title: { vi: "Ấm đun nước Tiger", jp: "タイガー製電気ケトル", en: "Tiger Electric Kettle" }, image: "https://images.unsplash.com/photo-1585659722983-38ca8e9ae939?q=80&w=400&fit=crop", condition: { vi: "Gần như mới", jp: "ほぼ新品", en: "Almost New" }, warranty: { vi: "Không bảo hành", jp: "保証なし", en: "No Warranty" } },
         
-        { id: 5, category: "furniture", price: "￥12,000", title: { vi: "Bộ bàn ăn gỗ 4 ghế", jp: "木製ダイニングテーブルセット", en: "Wooden Dining Set" }, image: "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=400&fit=crop" },
-        { id: 6, category: "furniture", price: "￥7,000", title: { vi: "Sofa đơn màu xám", jp: "グレーのシングルソファ", en: "Grey Single Sofa" }, image: "https://images.unsplash.com/photo-1567016432779-094069958ea5?q=80&w=400&fit=crop" },
-        { id: 7, category: "furniture", price: "￥4,500", title: { vi: "Kệ sách 3 tầng gỗ", jp: "木製3段本棚", en: "3-Tier Wooden Bookshelf" }, image: "https://images.unsplash.com/photo-1594620302200-9a762244a156?q=80&w=400&fit=crop" },
-        { id: 8, category: "furniture", price: "￥9,000", title: { vi: "Giường đơn kèm nệm", jp: "マットレス付きシングルベッド", en: "Single Bed with Mattress" }, image: "https://images.unsplash.com/photo-1505693419173-42b925b20671?q=80&w=400&fit=crop" },
+        { id: 5, category: "furniture", price: "￥12,000", title: { vi: "Bộ bàn ăn gỗ 4 ghế", jp: "木製ダイニングテーブルセット", en: "Wooden Dining Set" }, image: "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=400&fit=crop", condition: { vi: "Qua sử dụng - Xước nhẹ", jp: "中古品 - 小傷あり", en: "Used - Minor Scratches" }, warranty: { vi: "Không bảo hành", jp: "保証なし", en: "No Warranty" } },
+        { id: 6, category: "furniture", price: "￥7,000", title: { vi: "Sofa đơn màu xám", jp: "グレーのシングルソファ", en: "Grey Single Sofa" }, image: "https://images.unsplash.com/photo-1567016432779-094069958ea5?q=80&w=400&fit=crop", condition: { vi: "Qua sử dụng - Không xẹp lún", jp: "中古品 - へたりなし", en: "Used - No Sagging" }, warranty: { vi: "Không bảo hành", jp: "保証なし", en: "No Warranty" } },
+        { id: 7, category: "furniture", price: "￥4,500", title: { vi: "Kệ sách 3 tầng gỗ", jp: "木製3段本棚", en: "3-Tier Wooden Bookshelf" }, image: "https://images.unsplash.com/photo-1594620302200-9a762244a156?q=80&w=400&fit=crop", condition: { vi: "Tình trạng tốt", jp: "状態良好", en: "Good Condition" }, warranty: { vi: "Không bảo hành", jp: "保証なし", en: "No Warranty" } },
+        { id: 8, category: "furniture", price: "￥9,000", title: { vi: "Giường đơn kèm nệm", jp: "マットレス付きシングルベッド", en: "Single Bed with Mattress" }, image: "https://images.unsplash.com/photo-1505693419173-42b925b20671?q=80&w=400&fit=crop", condition: { vi: "Nệm đã giặt sạch", jp: "マットレス洗浄済み", en: "Mattress Cleaned" }, warranty: { vi: "Không bảo hành", jp: "保証なし", en: "No Warranty" } },
 
-        { id: 9, category: "kitchen", price: "￥1,500", title: { vi: "Bộ nồi Inox 3 món", jp: "ステンレス鍋3点セット", en: "Stainless Steel Pot Set" }, image: "https://images.unsplash.com/photo-1584990344313-2d2fc570498a?q=80&w=400&fit=crop" },
-        { id: 10, category: "kitchen", price: "￥800", title: { vi: "Bộ chén sứ 10 chiếc", jp: "磁器の茶碗10個セット", en: "Porcelain Bowl Set 10pcs" }, image: "https://images.unsplash.com/photo-1502444330834-31427a14e138?q=80&w=400&fit=crop" },
-        { id: 11, category: "kitchen", price: "￥2,500", title: { vi: "Máy xay sinh tố", jp: "ミキサー・ジューサー", en: "Blender" }, image: "https://images.unsplash.com/photo-1570222094114-d054a817e56b?q=80&w=400&fit=crop" },
-        { id: 12, category: "kitchen", price: "￥1,200", title: { vi: "Chảo chống dính", jp: "焦げ付きにくいフライパン", en: "Non-stick Frying Pan" }, image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=400&fit=crop" },
+        { id: 9, category: "kitchen", price: "￥1,500", title: { vi: "Bộ nồi Inox 3 món", jp: "ステンレス鍋3点セット", en: "Stainless Steel Pot Set" }, image: "https://images.unsplash.com/photo-1584990344313-2d2fc570498a?q=80&w=400&fit=crop", condition: { vi: "Mới 95%", jp: "美品（95%）", en: "95% New" }, warranty: { vi: "Không bảo hành", jp: "保証なし", en: "No Warranty" } },
+        { id: 10, category: "kitchen", price: "￥800", title: { vi: "Bộ chén sứ 10 chiếc", jp: "磁器の茶碗10個セット", en: "Porcelain Bowl Set 10pcs" }, image: "https://images.unsplash.com/photo-1502444330834-31427a14e138?q=80&w=400&fit=crop", condition: { vi: "Chưa sử dụng", jp: "未使用品", en: "Unused" }, warranty: { vi: "Không bảo hành", jp: "保証なし", en: "No Warranty" } },
+        { id: 11, category: "kitchen", price: "￥2,500", title: { vi: "Máy xay sinh tố", jp: "ミキサー・ジューサー", en: "Blender" }, image: "https://images.unsplash.com/photo-1570222094114-d054a817e56b?q=80&w=400&fit=crop", condition: { vi: "Hoạt động tốt", jp: "動作確認済み", en: "Working Perfectly" }, warranty: { vi: "Bảo hành 1 tháng", jp: "1ヶ月保証", en: "1 Month Warranty" } },
+        { id: 12, category: "kitchen", price: "￥1,200", title: { vi: "Chảo chống dính", jp: "焦げ付きにくいフライパン", en: "Non-stick Frying Pan" }, image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=400&fit=crop", condition: { vi: "Mới 100%", jp: "新品", en: "100% New" }, warranty: { vi: "Không bảo hành", jp: "保証なし", en: "No Warranty" } },
 
-        { id: 13, category: "baby", price: "￥4,000", title: { vi: "Xe đẩy Combi", jp: "コンビ製ベビーカー", en: "Combi Baby Stroller" }, image: "https://images.unsplash.com/photo-1591954840741-63ba9198668c?q=80&w=400&fit=crop" },
-        { id: 14, category: "baby", price: "￥2,500", title: { vi: "Cũi gỗ cho bé", jp: "木製ベビーベッド", en: "Wooden Baby Crib" }, image: "https://images.unsplash.com/photo-1544126592-807daf215651?q=80&w=400&fit=crop" },
-        { id: 15, category: "baby", price: "￥1,000", title: { vi: "Ghế ăn dặm", jp: "ベビー用ハイチェア", en: "Baby High Chair" }, image: "https://images.unsplash.com/photo-1588854337236-6889d631faa8?q=80&w=400&fit=crop" },
-        { id: 16, category: "baby", price: "￥1,500", title: { vi: "Đồ chơi gỗ xếp hình", jp: "木製の知育パズル", en: "Wooden Puzzle Toys" }, image: "https://images.unsplash.com/photo-1515488764276-beab7607c1e6?q=80&w=400&fit=crop" },
+        { id: 13, category: "baby", price: "￥4,000", title: { vi: "Xe đẩy Combi", jp: "コンビ製ベビーカー", en: "Combi Baby Stroller" }, image: "https://images.unsplash.com/photo-1591954840741-63ba9198668c?q=80&w=400&fit=crop", condition: { vi: "Đã vệ sinh diệt khuẩn", jp: "除菌清掃済み", en: "Sanitized & Cleaned" }, warranty: { vi: "Không bảo hành", jp: "保証なし", en: "No Warranty" } },
+        { id: 14, category: "baby", price: "￥2,500", title: { vi: "Cũi gỗ cho bé", jp: "木製ベビーベッド", en: "Wooden Baby Crib" }, image: "https://images.unsplash.com/photo-1544126592-807daf215651?q=80&w=400&fit=crop", condition: { vi: "Chắc chắn, an toàn", jp: "頑丈・安全", en: "Sturdy & Safe" }, warranty: { vi: "Không bảo hành", jp: "保証なし", en: "No Warranty" } },
+        { id: 15, category: "baby", price: "￥1,000", title: { vi: "Ghế ăn dặm", jp: "ベビー用ハイチェア", en: "Baby High Chair" }, image: "https://images.unsplash.com/photo-1588854337236-6889d631faa8?q=80&w=400&fit=crop", condition: { vi: "Qua sử dụng - Còn mới 90%", jp: "中古品 - 美品", en: "Used - Like New" }, warranty: { vi: "Không bảo hành", jp: "保証なし", en: "No Warranty" } },
+        { id: 16, category: "baby", price: "￥1,500", title: { vi: "Đồ chơi gỗ xếp hình", jp: "木製の知育パズル", en: "Wooden Puzzle Toys" }, image: "https://images.unsplash.com/photo-1515488764276-beab7607c1e6?q=80&w=400&fit=crop", condition: { vi: "Đầy đủ chi tiết", jp: "欠品なし", en: "Complete Set" }, warranty: { vi: "Không bảo hành", jp: "保証なし", en: "No Warranty" } },
 
-        { id: 17, category: "others", price: "￥6,000", title: { vi: "Xe đạp địa hình cũ", jp: "中古マウンテンバイク", en: "Used Mountain Bike" }, image: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?q=80&w=400&fit=crop" },
-        { id: 18, category: "others", price: "￥2,000", title: { vi: "Vali du lịch cỡ nhỡ", jp: "中型スーツケース", en: "Medium Suitcase" }, image: "https://images.unsplash.com/photo-1565026057447-bc90a3dceb87?q=80&w=400&fit=crop" },
-        { id: 19, category: "others", price: "￥1,500", title: { vi: "Đèn bàn làm việc", jp: "デスクライト", en: "Desk Lamp" }, image: "https://images.unsplash.com/photo-1534073828943-f801091bb18c?q=80&w=400&fit=crop" },
-        { id: 20, category: "others", price: "￥3,500", title: { vi: "Dụng cụ tập tạ tay", jp: "ダンベルセット", en: "Dumbbell Set" }, image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=400&fit=crop" }
+        { id: 17, category: "others", price: "￥6,000", title: { vi: "Xe đạp địa hình cũ", jp: "中古マウンテンバイク", en: "Used Mountain Bike" }, image: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?q=80&w=400&fit=crop", condition: { vi: "Đã bảo dưỡng tra dầu", jp: "注油・メンテナンス済み", en: "Oiled & Maintained" }, warranty: { vi: "Không bảo hành", jp: "保証なし", en: "No Warranty" } },
+        { id: 18, category: "others", price: "￥2,000", title: { vi: "Vali du lịch cỡ nhỡ", jp: "中型スーツケース", en: "Medium Suitcase" }, image: "https://images.unsplash.com/photo-1565026057447-bc90a3dceb87?q=80&w=400&fit=crop", condition: { vi: "Bánh xe trơn tru", jp: "キャスター動作良好", en: "Smooth Wheels" }, warranty: { vi: "Không bảo hành", jp: "保証なし", en: "No Warranty" } },
+        { id: 19, category: "others", price: "￥1,500", title: { vi: "Đèn bàn làm việc", jp: "デスクライト", en: "Desk Lamp" }, image: "https://images.unsplash.com/photo-1534073828943-f801091bb18c?q=80&w=400&fit=crop", condition: { vi: "Sáng bóng, kèm bóng đèn", jp: "電球付き・動作良好", en: "Shining, Bulb Included" }, warranty: { vi: "Bảo hành 1 tuần", jp: "1週間保証", en: "1 Week Warranty" } },
+        { id: 20, category: "others", price: "￥3,500", title: { vi: "Dụng cụ tập tạ tay", jp: "ダンベルセット", en: "Dumbbell Set" }, image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=400&fit=crop", condition: { vi: "Còn nguyên vẹn", jp: "破損なし", en: "Intact" }, warranty: { vi: "Không bảo hành", jp: "保証なし", en: "No Warranty" } }
       ]
     }
   },
@@ -293,7 +293,7 @@ export const translations = {
       },
       {
         id: "office-cleanup",
-        title: { jp: "Dọn dẹp văn phòng", vi: "Dọn dẹp văn phòng", en: "Office Cleanup" },
+        title: { jp: "オフィス不用品回収", vi: "Dọn dẹp văn phòng", en: "Office Cleanup" },
         before: { vi: "Văn phòng cũ nhiều giấy tờ và thiết bị điện tử hỏng.", jp: "古い書類や故障した電子機器が混在するオフィス。", en: "Office cluttered with old documents and broken electronics." },
         after: { vi: "Văn phòng trống sẵn sàng bàn giao cho chủ mới.", jp: "明け渡し準備が整った、何もない清らかな状態のオフィス。", en: "Empty office ready for handover to new tenants." },
         reuseStory: { 
@@ -353,7 +353,7 @@ export const translations = {
     ],
   },
   process: {
-    title: { jp: "ご利用の流れ", vi: "Quy trình sử dụng", en: "How It Works" },
+    title: { jp: "ご利用の流れ", vi: "Quy trình hoạt động", en: "How It Works" },
     steps: [
       { title: { jp: "お問い合わせ", vi: "Liên hệ", en: "Contact Us" } },
       { title: { jp: "お見積り", vi: "Báo giá", en: "Get a Quote" } },

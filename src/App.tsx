@@ -15,6 +15,14 @@ import BlogPage from "./pages/BlogPage.tsx";
 import BlogDetailPage from "./pages/BlogDetailPage.tsx";
 import ServiceDetailPage from "./pages/ServiceDetailPage.tsx";
 import ProductCatalogPage from "./pages/ProductCatalogPage.tsx";
+import ProductDetailPage from "./pages/ProductDetailPage.tsx";
+import LoginPage from "./pages/LoginPage.tsx";
+import AdminLayout from "./pages/admin/AdminLayout.tsx";
+import AdminDashboard from "./pages/admin/AdminDashboard.tsx";
+import AdminBlog from "./pages/admin/AdminBlog.tsx";
+import AdminProducts from "./pages/admin/AdminProducts.tsx";
+import AdminLeads from "./pages/admin/AdminLeads.tsx";
+import AdminSettings from "./pages/admin/AdminSettings.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -38,7 +46,19 @@ const App = () => {
             <Route path="/blog/:id" element={<BlogDetailPage lang={lang} setLang={setLang} />} />
             <Route path="/services/:id" element={<ServiceDetailPage lang={lang} setLang={setLang} />} />
             <Route path="/reuse-catalog" element={<ProductCatalogPage lang={lang} setLang={setLang} />} />
+            <Route path="/reuse-catalog/:id" element={<ProductDetailPage lang={lang} setLang={setLang} />} />
             <Route path="/contact" element={<ContactPage lang={lang} setLang={setLang} />} />
+            <Route path="/login" element={<LoginPage lang={lang} />} />
+            
+            {/* Admin Routes */}
+            <Route path="/admin" element={<AdminLayout lang={lang} />}>
+              <Route index element={<AdminDashboard />} />
+              <Route path="blog" element={<AdminBlog />} />
+              <Route path="products" element={<AdminProducts />} />
+              <Route path="leads" element={<AdminLeads />} />
+              <Route path="settings" element={<AdminSettings />} />
+            </Route>
+            
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

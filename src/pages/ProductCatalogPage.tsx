@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Language, translations, t } from "@/lib/i18n";
 import Header from "@/components/Header";
@@ -13,6 +14,7 @@ interface ProductCatalogPageProps {
 
 const ProductCatalogPage = ({ lang, setLang }: ProductCatalogPageProps) => {
   const catalog = translations.services.catalog!;
+  const navigate = useNavigate();
   const [activeCategory, setActiveCategory] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -86,7 +88,8 @@ const ProductCatalogPage = ({ lang, setLang }: ProductCatalogPageProps) => {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.9 }}
-                  className="bg-card rounded-2xl overflow-hidden border border-border group hover:shadow-xl transition-all"
+                  className="bg-card rounded-2xl overflow-hidden border border-border group hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer"
+                  onClick={() => navigate(`/reuse-catalog/${product.id}`)}
                 >
                   <div className="relative aspect-square overflow-hidden bg-muted">
                     <img
@@ -95,7 +98,8 @@ const ProductCatalogPage = ({ lang, setLang }: ProductCatalogPageProps) => {
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
-                        target.src = "https://images.unsplash.com/photo-1584622781564-1d9876a13d00?q=80&w=400&fit=crop";
+                        target.onerror = null; // Prevent infinite loop if fallback fails
+                        target.src = "https://placehold.co/400x400/f8fafc/94a3b8?text=Image+Not+Available";
                       }}
                     />
                     <div className="absolute top-4 right-4 bg-vc-black text-white px-3 py-1 rounded-lg text-sm font-bold shadow-lg">
